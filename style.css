@@ -1,0 +1,29 @@
+
+
+#sections {
+position: relative;
+display: inline-block;
+width: 450px;
+top: 200px;
+z-index: 90;
+}
+
+.step {
+margin-bottom: 200px;
+}
+
+#vis {
+display: inline-block;
+position: fixed;
+top: 60px;
+z-index: 1;
+margin-left: 0;
+
+height: 600px;
+width: 1000px;
+/* background-color: #ddd; */
+}
+
+.visuals {
+position: fixed;
+}
