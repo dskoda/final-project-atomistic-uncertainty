@@ -1,8 +1,8 @@
 class Scene {
-    constructor(svg) {
+    constructor(svg, area) {
         this.svg = svg
-            .attr('width', width)
-            .attr('height', height);
+            .attr('width', area.width)
+            .attr('height', area.height);
     }
 
     get canvas() {

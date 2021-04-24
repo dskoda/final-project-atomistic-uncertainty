@@ -1,6 +1,6 @@
 class TitleScene extends Scene {
-    constructor(svg, title) {
-        super(svg)
+    constructor(svg, area, title) {
+        super(svg, area)
 
         this.addText(title);
     }
