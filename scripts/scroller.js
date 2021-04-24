@@ -2,6 +2,7 @@
 let sections = d3.selectAll('.step');
 let sectionPositions = [];
 let startPos;
+
 sections.each(function(d,i) {
     let top = this.getBoundingClientRect().top;
     if(i === 0) {
@@ -11,14 +12,10 @@ sections.each(function(d,i) {
 });
 
 
+
 let scroll = scroller();
 scroll(d3.selectAll('.step'));
-scroll.on('active', function (index) {
-    console.log(`section ${index}`);
-    d3.selectAll('.step')
-        .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
-    scenes[index].render();
-});
+scroll.on('active', changeScenes);
 
 
 function scroller() {
