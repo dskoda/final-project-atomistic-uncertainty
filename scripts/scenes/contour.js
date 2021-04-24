@@ -14,7 +14,12 @@ let angle = 0;
 let count = 1;
 
 let alldata = [grid(0)];
-let allpoints = [{id:0, x: 500, y: 140},{id:1, x: 600, y: 240}, {id:2, x: 184, y: 340}, {id:3, x: 700, y: 540}];
+let allpoints = [
+    {id:0, x: 500, y: 140},
+    {id:1, x: 600, y: 240},
+    {id:2, x: 184, y: 340},
+    {id:3, x: 700, y: 540}
+];
 let iteration = [{value:1}]
 
 
@@ -73,6 +78,7 @@ function renderContour(svg, i = 1){
         .attr("stroke", "none")
         .attr("fill", "red")
         .attr("opacity", d => i == 1 ? 1 : 0); 
+
     d3.selectAll("circle").each(function() {  
         this.parentNode.appendChild(this); 
     });
