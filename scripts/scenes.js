@@ -9,16 +9,18 @@ const scene1 = new TitleScene(
     area,
     "This is the new title"
 );
-const scene2 = new TitleScene(
-    d3.select("#svg1"),
-    area,
-    "This is svg1"
-);
 const sceneEnd = new TitleScene(
     d3.select("#svgEnd"),
     area,
     "The end",
 );
+
+const scene2 = new TitleScene(
+    d3.select("#svgEnd"),
+    area,
+    "The end",
+);
+
 
 const sceneGen1 = new SvgFileScene(
     d3.select("#svgGen1"),
@@ -56,7 +58,7 @@ const sceneGen7 = new SvgFileScene(
     "figs/doublewell/gen7.svg",
 );
 
-let scenes = [
+scenes = [
     scene1,
     scene2,
     sceneGen1,
@@ -74,5 +76,6 @@ function changeScenes(index) {
     d3.selectAll('.step')
         .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
 
+    console.log(scenes);
     scenes[index].render();
 }

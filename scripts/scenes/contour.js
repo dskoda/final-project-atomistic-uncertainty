@@ -1,8 +1,8 @@
 const value = (x, y) => Math.sin(x + y) * Math.sin(x - y); 
 const scale = 1/80;
 
-const thresholds = [-1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8];
-const color = d3.scaleSequential([-1, 1], d3.interpolateSpectral);
+const thresholds = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+const color = d3.scaleSequential([-5, 5], d3.interpolateSpectral);
 const path = d3.geoPath();
 
 let alldata = [grid(0)];
@@ -16,27 +16,30 @@ let iteration = [{value:1}]
 
 
 class ContourScene extends Scene {
-    constructor(svg, area, contourData, pointsData, generation) {
+    constructor(svg, area, contourData, pointsData, title) {
         super(svg, area)
         this.contours = d3.contours()
             .size([area.width, area.height]);
         this.contourData = contourData;
         this.pointsData = pointsData;
-        this.generation = generation;
+        this.title = title
     }
 
     plotContour(i) {
         let g = this.svg
             .selectAll('g')
-            .data([this.contourData], data => data.id)
+            .data(this.contourData)
             .join('g')
             .attr("stroke", "white")
             .attr("stroke-width", 0.03);
 
+        console.log("data");
+        console.log(this.contourData);
+
         for (const threshold of thresholds) {
             g.append("path")
                 .attr("d", path(this.contours.contour(
-                    this.contourData.value, threshold
+                    this.contourData, threshold
                 )))
                 .attr("fill", color(threshold))
                 .attr("opacity", d => i == 1 ? 1 : 0);
@@ -71,7 +74,7 @@ class ContourScene extends Scene {
             .attr('font-family', 'Helvetica Neue, Arial')
             .attr('font-size', 40)
             .attr("opacity", d => i == 1 ? 1 : 0)
-            .text(`Generation ${this.generation}`);
+            .text(`${this.title}`);
     }
 
     renderContour(i) {
