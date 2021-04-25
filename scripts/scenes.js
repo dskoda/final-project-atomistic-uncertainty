@@ -2,6 +2,7 @@ const height = 600;
 const width = 1000;
 
 const area = {height: height, width:width};
+const contourArea = {height: 500, width: 500};
 
 const scene1 = new TitleScene(
     d3.select("#svg0"),
@@ -13,17 +14,16 @@ const scene2 = new TitleScene(
     area,
     "This is svg1"
 );
-const scene3 = new ContourScene(
-    d3.select("#svg2"),
-    area,
-    alldata[0],
-    allpoints,
-    1,
-);
 const sceneEnd = new TitleScene(
     d3.select("#svgEnd"),
     area,
     "The end",
+);
+
+const scene3 = new SvgFileScene(
+    d3.select("#svg2"),
+    contourArea,
+    "figs/gen1_avgE.svg",
 );
 
 let scenes = [
