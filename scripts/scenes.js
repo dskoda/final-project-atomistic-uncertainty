@@ -2,7 +2,7 @@ const height = 600;
 const width = 1000;
 
 const area = {height: height, width:width};
-const contourArea = {height: 500, width: 500};
+const contourArea = {height: 500, width: 1100};
 
 const scene1 = new TitleScene(
     d3.select("#svg0"),
@@ -23,37 +23,37 @@ const sceneEnd = new TitleScene(
 const sceneGen1 = new SvgFileScene(
     d3.select("#svgGen1"),
     contourArea,
-    "figs/gen1_avgE.svg",
+    "figs/doublewell/gen1.svg",
 );
 const sceneGen2 = new SvgFileScene(
     d3.select("#svgGen2"),
     contourArea,
-    "figs/gen2_avgE.svg",
+    "figs/doublewell/gen2.svg",
 );
 const sceneGen3 = new SvgFileScene(
     d3.select("#svgGen3"),
     contourArea,
-    "figs/gen3_avgE.svg",
+    "figs/doublewell/gen3.svg",
 );
 const sceneGen4 = new SvgFileScene(
     d3.select("#svgGen4"),
     contourArea,
-    "figs/gen4_avgE.svg",
+    "figs/doublewell/gen4.svg",
 );
 const sceneGen5 = new SvgFileScene(
     d3.select("#svgGen5"),
     contourArea,
-    "figs/gen5_avgE.svg",
+    "figs/doublewell/gen5.svg",
 );
 const sceneGen6 = new SvgFileScene(
     d3.select("#svgGen6"),
     contourArea,
-    "figs/gen6_avgE.svg",
+    "figs/doublewell/gen6.svg",
 );
 const sceneGen7 = new SvgFileScene(
     d3.select("#svgGen7"),
     contourArea,
-    "figs/gen7_avgE.svg",
+    "figs/doublewell/gen7.svg",
 );
 
 let scenes = [
