@@ -9,4 +9,16 @@ class SvgFileScene extends Scene {
         this.svg.append('image')
             .attr("xlink:href", file);
     }
+
+    render () {
+        d3.selectAll(".visuals")
+            .transition()
+            .duration(400)
+            .attr("opacity", 0);
+
+        this.svg
+            .transition()
+            .duration(400)
+            .attr("opacity", 1);
+    }
 }

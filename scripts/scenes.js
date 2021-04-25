@@ -20,16 +20,52 @@ const sceneEnd = new TitleScene(
     "The end",
 );
 
-const scene3 = new SvgFileScene(
-    d3.select("#svg2"),
+const sceneGen1 = new SvgFileScene(
+    d3.select("#svgGen1"),
     contourArea,
     "figs/gen1_avgE.svg",
+);
+const sceneGen2 = new SvgFileScene(
+    d3.select("#svgGen2"),
+    contourArea,
+    "figs/gen2_avgE.svg",
+);
+const sceneGen3 = new SvgFileScene(
+    d3.select("#svgGen3"),
+    contourArea,
+    "figs/gen3_avgE.svg",
+);
+const sceneGen4 = new SvgFileScene(
+    d3.select("#svgGen4"),
+    contourArea,
+    "figs/gen4_avgE.svg",
+);
+const sceneGen5 = new SvgFileScene(
+    d3.select("#svgGen5"),
+    contourArea,
+    "figs/gen5_avgE.svg",
+);
+const sceneGen6 = new SvgFileScene(
+    d3.select("#svgGen6"),
+    contourArea,
+    "figs/gen6_avgE.svg",
+);
+const sceneGen7 = new SvgFileScene(
+    d3.select("#svgGen7"),
+    contourArea,
+    "figs/gen7_avgE.svg",
 );
 
 let scenes = [
     scene1,
     scene2,
-    scene3,
+    sceneGen1,
+    sceneGen2,
+    sceneGen3,
+    sceneGen4,
+    sceneGen5,
+    sceneGen6,
+    sceneGen7,
     sceneEnd,
 ];
 
