@@ -5,9 +5,6 @@ const thresholds = [-1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8];
 const color = d3.scaleSequential([-1, 1], d3.interpolateSpectral);
 const path = d3.geoPath();
 
-let angle = 0;
-let count = 1;
-
 let alldata = [grid(0)];
 let allpoints = [
     {id:0, x: 500, y: 140},
@@ -19,18 +16,19 @@ let iteration = [{value:1}]
 
 
 class ContourScene extends Scene {
-    constructor(svg, area, contourData, pointsData) {
+    constructor(svg, area, contourData, pointsData, generation) {
         super(svg, area)
         this.contours = d3.contours()
             .size([area.width, area.height]);
         this.contourData = contourData;
         this.pointsData = pointsData;
+        this.generation = generation;
     }
 
     plotContour(i) {
         let g = this.svg
             .selectAll('g')
-            .data(this.contourData, data => data.id)
+            .data([this.contourData], data => data.id)
             .join('g')
             .attr("stroke", "white")
             .attr("stroke-width", 0.03);
@@ -48,16 +46,16 @@ class ContourScene extends Scene {
     plotCircles(i) {
         let circles = this.svg
             .selectAll("circle")
-            .data(this.points, d => d.id)
+            .data(this.pointsData, d => d.id)
             .join("circle")
             .attr('cx', d => d.x)
             .attr('cy', d => d.y)
             .attr("r", 10)
             .attr("stroke", "none")
-            .attr("fill", "red")
+            .attr("fill", "black")
             .attr("opacity", d => i == 1 ? 1 : 0); 
 
-        d3.selectAll("circle").each(function() {  
+        this.svg.selectAll("circle").each(function() {  
             this.parentNode.appendChild(this); 
         });
     }
@@ -73,7 +71,7 @@ class ContourScene extends Scene {
             .attr('font-family', 'Helvetica Neue, Arial')
             .attr('font-size', 40)
             .attr("opacity", d => i == 1 ? 1 : 0)
-            .text(d => "Iteration " + d.value);
+            .text(`Generation ${this.generation}`);
     }
 
     renderContour(i) {
@@ -86,10 +84,6 @@ class ContourScene extends Scene {
         super.render();
 
         this.renderContour(1);
-
-//        clearInterval(this.interval);
-//
-//        this.interval = setInterval(this.renderContour(1), 750);
     }
 }
 

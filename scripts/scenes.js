@@ -18,19 +18,23 @@ const scene3 = new ContourScene(
     area,
     alldata[0],
     allpoints,
+    1,
 );
-
-console.log(scene3);
+const sceneEnd = new TitleScene(
+    d3.select("#svgEnd"),
+    area,
+    "The end",
+);
 
 let scenes = [
     scene1,
     scene2,
     scene3,
+    sceneEnd,
 ];
 
 
 function changeScenes(index) {
-    //console.log(`section ${index}`);
     d3.selectAll('.step')
         .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
 
