@@ -28,43 +28,41 @@ class SvgPlotScene extends SvgFileScene {
     constructor(svg, area, file, pointsData) {
         super(svg, area, file);
         this.pointsData = pointsData;
+        this.tooltip = this.defineTooltip();
     }
 
     plotPoints() {
-        var tooltip = this.defineTooltip();
         function toggleVisibility(data, vis) {
-            return tooltip.style("visibility", vis);
+            console.log('mouseover');
+            return this.tooltip.style("visibility", vis);
         }
 
         let circles = this.svg
-            .selectAll("circle")
-            .data(this.pointsData, d => d.id)
-            .join("circle")
+            .selectAll("points")
+            .data(this.pointsData)
+            .enter()
+            .append("circle")
             .attr('cx', d => d.x)
             .attr('cy', d => d.y)
             .attr("r", 6.8)
             .attr("stroke", d => d.type == 'train' ? 'black' : 'white')
             .attr("fill", d => d.type == 'train' ? 'white' : 'black')
-            .on("mouseover", d => toggleVisibility(d, "visible"))
-            .on("mouseout", d => toggleVisibility(d, "hidden"));
-
-        this.svg.selectAll("circle").each(function() {  
-            this.parentNode.appendChild(this); 
-        });
+            //.on("mouseover", d => toggleVisibility(d, "visible"))
+            //.on("mouseover", function (d) {console.log(d);})
+            //.on("mouseout", d => toggleVisibility(d, "hidden"));
     }
 
     defineTooltip() {
-        var tooltip = this.svg
+        let tooltip = this.svg
             .append("div")
             .attr("class", "tooltip")
-            .style("opacity", 1)
+            .style("opacity", 0)
             //.style("position", "absolute")
             .style("background-color", "white")
             .style("border", "solid")
             .style("border-width", "1px")
             .style("border-radius", "5px")
-            .style("padding", "10px")
-            .text("testing!");
+            .style("padding", "10px");
 
         return tooltip
     }
@@ -99,14 +97,12 @@ class SvgPlotScene extends SvgFileScene {
                 .data(this.pointsData)
                 .join("path")
                 .attr('d', d => this.getArrowLine(d, i))
-                //.attr('stroke', 'black')
                 .attr("stroke", d => d.type == 'train' ? 'white' : 'black')
                 .attr('stroke-width', 2)
                 .attr("marker-end", d => d.type == 'train' ? 'url(#whitearrowhead)' : 'url(#arrowhead)')
                 .attr('fill', 'none');
         }
     }
-
 
     getArrowLine(data, i) {
         const scale = 5;
@@ -122,7 +118,6 @@ class SvgPlotScene extends SvgFileScene {
         ]
 
         return d3.line()([start, end])
-
     }
 
     render() {
