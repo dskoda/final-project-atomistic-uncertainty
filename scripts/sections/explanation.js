@@ -1,6 +1,39 @@
-const scene2 = new SvgFileScene(
+let xScale = width / 773.8;
+let yScale = height / 355.2;
+
+let allPoints = [
+    {
+        id: 0,
+        type: 'attack',
+        x: 578.5 * xScale,
+        y: 145.2 * yScale,
+        forces: [
+            {i: 0, x: -0.72, y: -0.09},
+            {i: 1, x: 7.6, y: -1.7},
+            {i: 2, x: 13.2, y: 3.75},
+            {i: 3, x: -1.3, y: -1.7},
+            {i: 4, x: 17.1, y: -4.9}
+        ],
+    },
+    {
+        id: 1,
+        type: 'train',
+        x: 400.0 * xScale,
+        y: 42.0 * yScale,
+        forces: [
+            {i: 0, x: -1.26, y: -17.74},
+            {i: 1, x: -1.13, y: -17.79},
+            {i: 2, x: -1.15, y: -17.77},
+            {i: 3, x: -1.10, y: -17.80},
+            {i: 4, x: -1.18, y: -17.73}
+        ],
+    },
+];
+
+const scene2 = new SvgPlotScene(
     d3.select("#svg1"),
     contourArea,
     "figs/doublewell/gen2_example.svg",
+    allPoints
 );
 

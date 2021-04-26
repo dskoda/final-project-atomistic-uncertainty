@@ -33,9 +33,6 @@ class ContourScene extends Scene {
             .attr("stroke", "white")
             .attr("stroke-width", 0.03);
 
-        console.log("data");
-        console.log(this.contourData);
-
         for (const threshold of thresholds) {
             g.append("path")
                 .attr("d", path(this.contours.contour(
