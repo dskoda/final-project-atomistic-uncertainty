@@ -1,13 +1,15 @@
 const sceneIntro1 = new SvgFileScene(
     d3.select("#svgIntro1"),
     contourArea,
-    "figs/intro/intro1.svg",
+    "figs/intro/pes.svg"
 );
+
 const sceneIntro2 = new SvgFileScene(
     d3.select("#svgIntro2"),
     contourArea,
-    "figs/intro/intro2.svg",
+    "figs/intro/atomsim1.svg"
 );
+
 const sceneIntro3 = new SvgFileScene(
     d3.select("#svgIntro3"),
     contourArea,

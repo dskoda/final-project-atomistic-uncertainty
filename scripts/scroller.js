@@ -5,6 +5,7 @@ let startPos;
 
 sections.each(function(d,i) {
     let top = this.getBoundingClientRect().top;
+    console.log(top)
     if(i === 0) {
         startPos = top;
     }

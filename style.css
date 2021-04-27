@@ -1,29 +1,34 @@
-
+body {
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    margin-right: 40px; 
+    margin-left: 40px;
+  }
 
 #sections {
-position: relative;
+position: absolute;
 display: inline-block;
 width: 450px;
-top: 200px;
+top: 0px;
 z-index: 90;
 }
 
 .step {
-margin-bottom: 200px;
+margin-bottom: 500px;
 }
 
-#vis {
-display: inline-block;
-position: fixed;
-top: 60px;
-z-index: 1;
-margin-left: 0;
-
-height: 600px;
-width: 1000px;
-/* background-color: #ddd; */
+.s_small {
+    margin-bottom:100px;
 }
 
 .visuals {
 position: fixed;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 }

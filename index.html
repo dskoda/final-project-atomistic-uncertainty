@@ -11,92 +11,102 @@
 
 <head> 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div>
-    <div id="sections">
-    <section id ="section1"  class="step">
-        <div class="title">Differentiable sampling of molecular geometries with uncertainty-based adversarial attacks</div>
-    </section>
-    <section id ="intro1" class="step">
-        Intro 1
-    </section>
-    <section id ="intro2" class="step">
-        Intro 2
-    </section>
-    <section id ="intro3" class="step">
-        Intro 3
-    </section>
-    <section id ="intro4" class="step">
-        Intro 4
-    </section>
-    <section id ="intro5" class="step">
-        Intro 5
-    </section>
-    <section id ="intro6" class="step">
-        Intro 6
-    </section>
-    <section id ="intro7" class="step">
-        Intro 7
-    </section>
-    <section id ="section2" class="step">
-        section 2
-    </section>
-    <section id ="gen1" class="step">
-        Generation 1
-    </section>
-    <section id ="gen2" class="step">
-        Generation 2
-    </section>
-    <section id ="gen3" class="step">
-        Generation 3
-    </section>
-    <section id ="gen4" class="step">
-        Generation 4
-    </section>
-    <section id ="gen5" class="step">
-        Generation 5
-    </section>
-    <section id ="gen6" class="step">
-        Generation 6
-    </section>
-    <section id ="gen7" class="step">
-        Generation 7
-    </section>
-    <section id ="section4" class="step">
-        The End
-    </section>
-    <section id ="section5" class="step">
-        Filler
-    </section>
-    <section id ="section6" class="step">
-        Filler
-    </section>
+    <div>
+        <div id="sections" style="width: 95%;">
+            <section class="step">
+                <div style="text-align: center;">
+                    <h1>
+                        Visualizing Uncertainty in Molecular Simulation
+                    </h1>
+                    <p>
+                        By Aik Jun Tan, Daniel Schwalbe-Koda, and Franklin Morgan
+                    </p>  
+                    <img style="padding-top: 30px; padding-bottom: 20px; width: 40%;" src="figs/intro/geometries.png"/>
+                    <p style="color: grey;">&#8595; SCROLL TO BEGIN &#8595;</p>      
+                    
+                </div>
+            </section>
+            <section class="step s_small">
+                <div style="width:40%;">
+                    <h2>Understanding material behavior</h2>
+                    <p>
+                        A potential energy surface (PES) describes the energy of a system based the configuration of atoms within it. PESes are crucial in the study of materials science for understanding how materials will behave under varying conditions. 
+                    </p>
+                    <p>
+                        Creating accurate models of these PESes means we can discover and use better materials in many different applications--from characterizing drug activity and toxicity, to creating stronger steel compositions for spacecraft, to developing catalysts for producing oxygen on Mars!
+                    </p>
+                    
+                </div>
+            </section>
+            <section class="step">
+                <div style="width: 40%;">
+                    <p>
+                        Traditionally, "brute force" methods such as ab initio molecular dynamic simulations are used to generate potential energy surfaces. However, these methods require extremely high computing power, and are cost-prohibitive for larger and more complex materials systems. 
+                    </p>
+                    <p>
+                        Fortunately, recent advances in machine learning techniques allow for high-accuracy predictions in less time and at lower costs. Let's take a look how this works...
+                    </p>
+                </div>
+            </section>
+            <section class="step">
+                <div style="width: 60%; color: white;">""</div>
+                <div style="width: 40%; float: right;">
+                    <h2>Neural networks</h2>
+                    <p>
+                        One machine learning technique, the neural network, is especially well suited to handle the extensive datasets needed to train PESes for complex materials. 
+                    </p>
+                </div>
+                
+            </section>
+            <section id ="gen2" class="step s_small">
+                Generation 2
+            </section>
+            <section id ="gen3" class="step s_small">
+                Generation 3
+            </section>
+            <section id ="gen4" class="step s_small">
+                Generation 4
+            </section>
+            <section id ="gen5" class="step s_small">
+                Generation 5
+            </section>
+            <section id ="gen6" class="step s_small">
+                Generation 6
+            </section>
+            <section id ="gen7" class="step s_small">
+                Generation 7
+            </section>
+            <section id ="section4" class="step">
+                The End
+            </section>
+            <section id ="section5" class="step">
+                Filler
+            </section>
+            <section id ="section6" class="step">
+                Filler
+            </section>
+        </div>
+
+
+            <svg id="svgBlank" class = "visuals"></svg>
+            <svg id='svgIntro1' viewBox = "-175 0 350 350" class = "visuals"></svg>
+            <svg id='svgIntro2' viewBox = "0 -50 550 550" class = "visuals"></svg>
+            <svg id='svg1' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen1' viewBox = "-800 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen2' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen3' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen4' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen5' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen6' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen7' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgEnd' class = "visuals"></svg>
+
     </div>
-
-
-    <div id='vis'>
-        <svg id='svg0' class = "visuals"></svg>
-        <svg id='svgIntro1' class = "visuals"></svg>
-        <svg id='svgIntro2' class = "visuals"></svg>
-        <svg id='svgIntro3' class = "visuals"></svg>
-        <svg id='svgIntro4' class = "visuals"></svg>
-        <svg id='svgIntro5' class = "visuals"></svg>
-        <svg id='svgIntro6' class = "visuals"></svg>
-        <svg id='svgIntro7' class = "visuals"></svg>
-        <svg id='svg1' class = "visuals"></svg>
-        <svg id='svgGen1' class = "visuals"></svg>
-        <svg id='svgGen2' class = "visuals"></svg>
-        <svg id='svgGen3' class = "visuals"></svg>
-        <svg id='svgGen4' class = "visuals"></svg>
-        <svg id='svgGen5' class = "visuals"></svg>
-        <svg id='svgGen6' class = "visuals"></svg>
-        <svg id='svgGen7' class = "visuals"></svg>
-        <svg id='svgEnd' class = "visuals"></svg>
-    </div>
-
-</div>
 </body>
 
 <script src="scripts/scenes/base.js"></script>

@@ -17,7 +17,7 @@ class Scene {
 
         this.svg
             .transition()
-            .duration(600)
+            .duration(0)
             .attr("opacity", 1);
     }
 }

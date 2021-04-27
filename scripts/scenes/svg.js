@@ -13,12 +13,12 @@ class SvgFileScene extends Scene {
     render () {
         d3.selectAll(".visuals")
             .transition()
-            .duration(600)
+            .duration(1000)
             .attr("opacity", 0);
 
         this.svg
             .transition()
-            .duration(300)
+            .duration(1000)
             .attr("opacity", 1);
     }
 }
