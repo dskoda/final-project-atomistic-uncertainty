@@ -10,7 +10,6 @@ scenes = [
     sceneIntroAtom,
     sceneIntro4,
     sceneBlank,
-    // sceneGen1, <- something seems to be up with this svg
     sceneGen2,
     sceneGen3,
     sceneGen4,
