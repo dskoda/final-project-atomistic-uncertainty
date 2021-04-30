@@ -4,16 +4,24 @@ scenes = [
     sceneIntro1,
     sceneBlank,
     sceneIntro2,
+    sceneIntro2,
     sceneBlank,
-    scene2,
-    scene2,
+    sceneIntro3,
+    sceneIntroAtom,
+    sceneIntro4,
+    sceneBlank,
+    // sceneGen1, <- something seems to be up with this svg
     sceneGen2,
     sceneGen3,
     sceneGen4,
     sceneGen5, 
     sceneGen6,
     sceneGen7,
-    sceneEnd
+    sceneBlank,
+    // Start of extra scenes (for onmouseover)
+    sceneIntroCat,
+    sceneIntroDog,
+    sceneIntroBird
 ];
 
 
