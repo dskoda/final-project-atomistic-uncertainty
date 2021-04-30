@@ -35,10 +35,19 @@ const sceneAttacks1 = new SvgFileScene(
     contourArea,
     "figs/intro/pes_above.svg"
 );
-const sceneAttacks2 = new SvgPlotScene(
+const sceneAttacks2 = new SvgFileScene(
     d3.select("#svgAttacks2"),
     contourArea,
-    "figs/doublewell/gen2_example.svg",
-    allPoints
+    "figs/doublewell/example.svg",
+);
+const sceneAttacks3 = new SvgFileScene(
+    d3.select("#svgAttacks3"),
+    contourArea,
+    "figs/doublewell/example_train.svg",
 );
 
+const sceneAttacks4 = new SvgFileScene(
+    d3.select("#svgAttacks4"),
+    contourArea,
+    "figs/doublewell/example_attack.svg",
+);

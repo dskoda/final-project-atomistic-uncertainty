@@ -29,9 +29,10 @@ scenes = [
     sceneUncertainty3,
     sceneAttacks1,
     sceneAttacks2,
+    sceneAttacks3,
+    sceneAttacks4,
     sceneBlank,
     sceneBlank,
-    sceneGen1,
     sceneBlank,
 ];
 
