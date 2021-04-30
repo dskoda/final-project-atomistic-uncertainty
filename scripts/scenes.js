@@ -1,37 +1,38 @@
 scenes = [
     // Header
     sceneBlank, 
+
     // Intro and spacing
     sceneIntro1,
     sceneIntro1,
     sceneBlank,
-    // NNs
+
+    // NNs and spacing
     sceneIntro2,
     sceneIntro2,
     sceneBlank,
+
     // Intro 3: cats and dogs
     sceneBlank,
-    // Intro 4: molecules
+
+    // Intro 4: molecules and question
     sceneBlank,
     sceneUncertainty1,
-    // Uncertainty
+
+    // Spacing, uncertainty ensemble, and question
     sceneUncertainty1,
     sceneUncertainty2,
-    sceneUncertainty3,
+    sceneUncertainty2,
+    sceneUncertainty2,
 
+    // Attacks
+    sceneUncertainty3,
+    sceneAttacks1,
+    sceneAttacks2,
     sceneBlank,
     sceneBlank,
-    sceneGen2,
-    sceneGen3,
-    sceneGen4,
-    sceneGen5, 
-    sceneGen6,
-    sceneGen7,
+    sceneGen1,
     sceneBlank,
-//    // Start of extra scenes (for onmouseover)
-//    sceneIntroCat,
-//    sceneIntroDog,
-//    sceneIntroBird
 ];
 
 

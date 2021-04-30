@@ -13,12 +13,12 @@ class SvgFileScene extends Scene {
     render () {
         d3.selectAll(".visuals")
             .transition()
-            .duration(1000)
+            .duration(500)
             .attr("opacity", 0);
 
         this.svg
             .transition()
-            .duration(1000)
+            .duration(300)
             .attr("opacity", 1);
     }
 }
@@ -32,10 +32,10 @@ class SvgPlotScene extends SvgFileScene {
     }
 
     plotPoints() {
-        function toggleVisibility(data, vis) {
-            console.log('mouseover');
-            return this.tooltip.style("visibility", vis);
-        }
+//        function toggleVisibility(data, vis) {
+//            console.log('mouseover');
+//            return this.tooltip.style("visibility", vis);
+//        }
 
         let circles = this.svg
             .selectAll("points")
@@ -46,10 +46,7 @@ class SvgPlotScene extends SvgFileScene {
             .attr('cy', d => d.y)
             .attr("r", 6.8)
             .attr("stroke", d => d.type == 'train' ? 'black' : 'white')
-            .attr("fill", d => d.type == 'train' ? 'white' : 'black')
-            //.on("mouseover", d => toggleVisibility(d, "visible"))
-            //.on("mouseover", function (d) {console.log(d);})
-            //.on("mouseout", d => toggleVisibility(d, "hidden"));
+            .attr("fill", d => d.type == 'train' ? 'white' : 'black');
     }
 
     defineTooltip() {

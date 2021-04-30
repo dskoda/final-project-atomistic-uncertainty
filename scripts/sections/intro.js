@@ -34,13 +34,6 @@ const sceneIntroBird = new SvgFileScene(
     "figs/intro/nn_2.png",
 );
 
-//const sceneIntroAtom = new SvgFileScene(
-//    d3.select("#svgIntro3Atom"),
-//    contourArea,
-//    "figs/intro/nn_5.png",
-//);
-
-
 const sceneIntroMol = new SvgFileScene(
     d3.select("#svgIntro4"),
     contourArea,

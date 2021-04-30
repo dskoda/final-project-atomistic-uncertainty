@@ -1,5 +1,5 @@
-let xScale = width / 773.8;
-let yScale = height / 355.2;
+let xScale = 1100 / 773.8;
+let yScale = 800 / 355.2;
 
 let allPoints = [
     {
@@ -30,8 +30,13 @@ let allPoints = [
     },
 ];
 
-const scene2 = new SvgPlotScene(
-    d3.select("#svg1"),
+const sceneAttacks1 = new SvgFileScene(
+    d3.select("#svgAttacks1"),
+    contourArea,
+    "figs/intro/pes_above.svg"
+);
+const sceneAttacks2 = new SvgPlotScene(
+    d3.select("#svgAttacks2"),
     contourArea,
     "figs/doublewell/gen2_example.svg",
     allPoints

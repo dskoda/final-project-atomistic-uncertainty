@@ -20,7 +20,7 @@
             <section class="step">
                 <div style="text-align: center;">
                     <h1>
-                        Reducing Uncertainty in Molecular Simulation
+                        Visualizing Uncertainty in Molecular Simulation
                     </h1>
                     <p>
                         By Aik Jun Tan, Daniel Schwalbe-Koda, and Franklin Morgan
@@ -71,13 +71,13 @@
             </section>
             <section class="step s_small flex-container">
                 <div style="width: 40%; font-size: 26px;">
-                    <p><em>But are these predictions correct?</em></p>
+                    <p><em>But are these predictions accurate?</em></p>
                 </div>
             </section>
             <section class="step" style="color: white;">""</section>
             <section class="step s_small flex-container" style="width:100%;">
                 <div style="width:40%;">
-                    <h2>Uncertainty in Neural Networks</h2>
+                    <h2>Prediction uncertainty in neural networks</h2>
                     <p>
                         There is always some uncertainty in the predictions made by neural networks. Consider the neural network to the right, which predicts whether an input image represents a dog or a cat. 
                     </p>
@@ -116,7 +116,7 @@
 
             <section class="step s_small">
                 <div style="width: 40%; font-size: 26px;">
-                    <p><em>The problem, therefore, is: how to assess the reliability of neural network predictions?</em></p>
+                    <p><em>One problem, therefore, is: how to assess the reliability of neural network predictions?</em></p>
                 </div>
             </section>
             <section class="step" style="color: white;">""</section>
@@ -126,28 +126,41 @@
                     Uncertainty Quantification
                 </h2>
                     <p>
-                        Instead of using a single neural network, we can make a prediction using an ensemble of NNs.
+                        Instead of using a single neural network to make predictions, we can use an ensemble of neural networks. When the data is well-represented in the training set, the neural network committee predicts a single value with low uncertainty. On the other hand, when the data is not well-known, the NNs will disagree on the predicted property, thus leading to a higher uncertainty.
+                    </p>
+                    <p>
+                        In the case of molecular simulation, it is more interesting to use uncertainty in the predicted forces instead of predicted energy. 
                     </p>
             </section>
-            <section class="step s_small flex-container">
-                <div style="width: 40%">
-                    <p>
-                        Then perform adversarial attacks
-                    </p>
+            <section class="step s_small">
+                <div style="width: 40%; font-size: 26px;">
+                    <p><em>Now, the follow-up question: how do we improve the robustness of neural networks for atomistic simulations?</em></p>
                 </div>
             </section>
+            <section class="step" style="color: white;">""</section>
 
             <section class="step" style="width:40%;">
                 <h2>
                     Adversarial Attacks
                 </h2>
                     <p>
-                        It is possible to retrain the model with additional data; however, gathering this data requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
+                        Improving the robustness of neural network potentials requires increasing the breadth of their training sets; however, gathering this data usually requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
                     </p>
                 <p>
-                    Neural networks can be extremely sensitive to the input data: small changes in the input can result in widly inaccurate predictions. One way to mitigate this is to use adversarial attacks, in which inputs 
+                    We propose using adversarial attacks to find the points which the neural network does not predict well. In atomistic simulations, that corresponds to adding a small disturbance &delta; to the input geometry and finding which are the distortions that maximize the uncertainty of the neural network committee. This optimization can be done by simply calculating the gradients of the uncertainty with respect to &delta;.
                 </p>
+                <p> Next, we exemplify how this method works... </p>
             </section>
+
+            <section class="step" style="width:40%;">
+                <h2>
+                    Exemplifying adversarial attacks
+                </h2>
+                    <p>
+                        Consider a 2D potential energy surface such as the one shown on the right. A toy example could be the 2D double well, which is a potential having two basins. We can train a neural network committee to predict this potential energy surface and then analyze the energies and forces from this committee
+                    </p>
+            </section>
+
             <section class="step s_small" style="color: white;">""</section>
             <section id ="gen4" class="step">
                 Generation 4
@@ -187,15 +200,9 @@
             <svg id='svgUncertainty1' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgUncertainty2' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgUncertainty3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgIntro5' viewBox = "-225 -50 575 575" class = "visuals"></svg>
-            <svg id='svg1' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
+            <svg id='svgAttacks1' viewBox = "-200 -50 450 350" class = "visuals"></svg>
+            <svg id='svgAttacks2' viewBox = "-800 -200 2000 2000" class = "visuals"></svg>
             <svg id='svgGen1' viewBox = "-800 5000 5000" class = "visuals"></svg>
-            <svg id='svgGen2' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
-            <svg id='svgGen3' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
-            <svg id='svgGen4' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
-            <svg id='svgGen5' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
-            <svg id='svgGen6' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
-            <svg id='svgGen7' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
             <svg id='svgEnd' class = "visuals"></svg>
 
     </div>
