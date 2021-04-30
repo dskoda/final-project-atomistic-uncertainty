@@ -13,7 +13,7 @@ const sceneIntro2 = new SvgFileScene(
 const sceneIntro3 = new SvgFileScene(
     d3.select("#svgIntro3"),
     contourArea,
-    "figs/intro/nn_1.png",
+    "figs/intro/nn_hover.png",
 );
 
 const sceneIntroCat = new SvgFileScene(
@@ -34,30 +34,48 @@ const sceneIntroBird = new SvgFileScene(
     "figs/intro/nn_2.png",
 );
 
-const sceneIntroAtom = new SvgFileScene(
-    d3.select("#svgIntro3Atom"),
-    contourArea,
-    "figs/intro/nn_5.png",
-);
+//const sceneIntroAtom = new SvgFileScene(
+//    d3.select("#svgIntro3Atom"),
+//    contourArea,
+//    "figs/intro/nn_5.png",
+//);
 
-const sceneIntro4 = new SvgFileScene(
+
+const sceneIntroMol = new SvgFileScene(
     d3.select("#svgIntro4"),
     contourArea,
-    "figs/intro/atomsim3.svg",
+    "figs/intro/molnn_1.png",
+);
+const sceneIntroMol1 = new SvgFileScene(
+    d3.select("#svgIntro4_1"),
+    contourArea,
+    "figs/intro/molnn_2.png",
+);
+const sceneIntroMol2 = new SvgFileScene(
+    d3.select("#svgIntro4_2"),
+    contourArea,
+    "figs/intro/molnn_3.png",
+);
+const sceneIntroMol3 = new SvgFileScene(
+    d3.select("#svgIntro4_3"),
+    contourArea,
+    "figs/intro/molnn_4.png",
 );
 
-const sceneIntro5 = new SvgFileScene(
-    d3.select("#svgIntro5"),
+
+const sceneUncertainty1 = new SvgFileScene(
+    d3.select("#svgUncertainty1"),
     contourArea,
-    "figs/intro/atomsim1.svg",
+    "figs/intro/atomsim1.png",
 );
-const sceneIntro6 = new SvgFileScene(
-    d3.select("#svgIntro6"),
+const sceneUncertainty2 = new SvgFileScene(
+    d3.select("#svgUncertainty2"),
     contourArea,
-    "figs/intro/atomsim2.svg",
+    "figs/intro/atomsim2.png",
 );
-const sceneIntro7 = new SvgFileScene(
-    d3.select("#svgIntro7"),
+const sceneUncertainty3 = new SvgFileScene(
+    d3.select("#svgUncertainty3"),
     contourArea,
-    "figs/intro/atomsim3.svg",
+    "figs/intro/atomsim3.png",
 );
+

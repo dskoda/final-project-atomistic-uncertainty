@@ -7,7 +7,6 @@
 <script src="https://unpkg.com/d3-simple-slider"></script>
 <script src="https://d3js.org/d3-color.v1.min.js"></script>
 <script src="https://d3js.org/d3-hsv.v0.1.min.js"></script>
-<script src=style.css></script>
 
 <head> 
     <link rel="stylesheet" href="style.css">
@@ -54,6 +53,8 @@
                 </div>
             </section>
             <section class="step" style="color: white;">""</section>
+
+
             <section class="step s_small flex-container">
                 <div style="width: 40%">
                     <h2>Neural networks</h2>
@@ -90,26 +91,59 @@
                    </div>
                 </div>
                 <div style="width:60%; text-align: center; margin-top: 80px;">
-                    <img id="animals" src="figs/intro/nn_1.png" style="width:90%;"/>
+                    <img id="animals" src="figs/intro/nn_hover.png" style="width:90%;"/>
                 </div>
             </section>
+
             <section class="step flex-container" style="width:100%;">
                 <div style="width: 40%;">
                     <p>
                         Neural networks predicting potential energy surfaces face similar challenges to those outlined in the example above. While the algorithm predicts data between existing data points very well (similar to the cat and dog), it may fail catastrophically for rare events for which we have little to no data (similar to the bird).
                     </p>
                     <p>
-                        It is possible to retrain the model with additional data; however, gathering this data requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
+                        Hover over the three different input geometries to see how the network makes a prediction under uncertainty:
                     </p>
+                   <div style="width: 90%; text-align: center;" class="flex-container">
+                        <img id="mol1" style="width: 28%;" src="figs/intro/mol1.png"/>
+                        <img id="mol2" style="width: 28%;" src="figs/intro/mol2.png"/>
+                        <img id="mol3" style="width: 28%;" src="figs/intro/mol3.png"/>
+                   </div>
                 </div>
-                <div style="width:60%; text-align: center; margin-top: 50px;">
-                    <img id="animals" src="figs/intro/nn_5.png" style="width:90%;"/>
+                <div style="width:60%; text-align: center; margin-top: 80px;">
+                    <img id="molnn" src="figs/intro/molnn_1.png" style="width:90%;"/>
                 </div>
             </section>
+
+            <section class="step s_small">
+                <div style="width: 40%; font-size: 26px;">
+                    <p><em>The problem, therefore, is: how to assess the reliability of neural network predictions?</em></p>
+                </div>
+            </section>
+            <section class="step" style="color: white;">""</section>
+
+            <section class="step" style="width:40%;">
+                <h2>
+                    Uncertainty Quantification
+                </h2>
+                    <p>
+                        Instead of using a single neural network, we can make a prediction using an ensemble of NNs.
+                    </p>
+            </section>
+            <section class="step s_small flex-container">
+                <div style="width: 40%">
+                    <p>
+                        Then perform adversarial attacks
+                    </p>
+                </div>
+            </section>
+
             <section class="step" style="width:40%;">
                 <h2>
                     Adversarial Attacks
                 </h2>
+                    <p>
+                        It is possible to retrain the model with additional data; however, gathering this data requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
+                    </p>
                 <p>
                     Neural networks can be extremely sensitive to the input data: small changes in the input can result in widly inaccurate predictions. One way to mitigate this is to use adversarial attacks, in which inputs 
                 </p>
@@ -146,8 +180,14 @@
             <svg id='svgIntro3Cat' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro3Dog' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro3Bird' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgIntro3Atom' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgIntro4' viewBox = "-225 -50 575 575" class = "visuals"></svg>
+            <svg id='svgIntro4' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro4_1' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro4_2' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro4_3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgUncertainty1' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgUncertainty2' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgUncertainty3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro5' viewBox = "-225 -50 575 575" class = "visuals"></svg>
             <svg id='svg1' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
             <svg id='svgGen1' viewBox = "-800 5000 5000" class = "visuals"></svg>
             <svg id='svgGen2' viewBox = "-800 0 2000 2000" class = "visuals"></svg>

@@ -38,5 +38,44 @@ bird.addEventListener("mouseout", function( event ) {
     document.getElementById("animals").src="figs/intro/nn_1.png"
 })
 
+// Hovering function for molecules
+let mol1 = document.getElementById("mol1")
+let mol2 = document.getElementById("mol2")
+let mol3 = document.getElementById("mol3")
+
+mol1.addEventListener("mouseover", function() {
+    mol2.style.opacity = 0.2;
+    mol3.style.opacity = 0.2;
+    document.getElementById("molnn").src="figs/intro/molnn_2.png"
+})
+
+mol1.addEventListener("mouseout", function( event ) {
+    mol2.style.opacity = 1; 
+    mol3.style.opacity = 1;
+    document.getElementById("molnn").src="figs/intro/molnn_5.png"
+})
 
 
+mol2.addEventListener("mouseover", function() {
+    mol1.style.opacity = 0.2;
+    mol3.style.opacity = 0.2;
+    document.getElementById("molnn").src="figs/intro/molnn_3.png"
+})
+
+mol2.addEventListener("mouseout", function( event ) {
+    mol1.style.opacity = 1; 
+    mol3.style.opacity = 1;
+    document.getElementById("molnn").src="figs/intro/molnn_5.png"
+})
+
+mol3.addEventListener("mouseover", function() {
+    mol1.style.opacity = 0.2;
+    mol2.style.opacity = 0.2;
+    document.getElementById("molnn").src="figs/intro/molnn_4.png"
+})
+
+mol3.addEventListener("mouseout", function( event ) {
+    mol1.style.opacity = 1; 
+    mol2.style.opacity = 1;
+    document.getElementById("molnn").src="figs/intro/molnn_5.png"
+})
