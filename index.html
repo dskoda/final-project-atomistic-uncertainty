@@ -21,7 +21,7 @@
             <section class="step">
                 <div style="text-align: center;">
                     <h1>
-                        Visualizing Uncertainty in Molecular Simulation
+                        Reducing Uncertainty in Molecular Simulation
                     </h1>
                     <p>
                         By Aik Jun Tan, Daniel Schwalbe-Koda, and Franklin Morgan
@@ -40,48 +40,84 @@
                     <p>
                         Creating accurate models of these PESes means we can discover and use better materials in many different applications--from characterizing drug activity and toxicity, to creating stronger steel compositions for spacecraft, to developing catalysts for producing oxygen on Mars!
                     </p>
-                    
-                </div>
-            </section>
-            <section class="step s_small">
-                <div style="width: 40%;">
                     <p>
                         Traditionally, "brute force" methods such as ab initio molecular dynamic simulations are used to generate potential energy surfaces. However, these methods require extremely high computing power, and are cost-prohibitive for larger and more complex materials systems. 
                     </p>
                     <p>
-                        Fortunately, recent advances in machine learning techniques allow for high-accuracy predictions in less time and at lower costs. Let's take a look how this works...
+                        Fortunately, recent advances in machine learning techniques allow for high-accuracy predictions in less time and at lower costs.
                     </p>
                 </div>
             </section>
-            <section class="step s_small" style="color: white;">Hidden section</section>
             <section class="step s_small">
-                <div style="width: 60%; color: white;">""</div>
-                <div style="width: 40%; float: right;">
+                <div style="width: 40%; font-size: 26px;">
+                    <p><em>Let's take a look at how this works...</em></p>
+                </div>
+            </section>
+            <section class="step" style="color: white;">""</section>
+            <section class="step s_small flex-container">
+                <div style="width: 40%">
                     <h2>Neural networks</h2>
                     <p>
                         One machine learning technique, the neural network, is especially well suited to handle the extensive datasets needed to train PESes for complex materials. 
                     </p>
+                    <p>
+                        This algorithm receives data from previous ab initio molecular simulations, which measure the energy of a system based on a specific configuration of atoms. 
+                    </p>
+                    <p>
+                        The neural network then uses these data to make predictions on that system's potential energy surface. This allows us to quickly predict material behavior for configurations that have not been explicitly tested.
+                    </p>
                 </div>
-                
             </section>
-            <section class="step s_small" style="color: white;">Hidden section</section>
-            
-            <section id ="gen2" class="step s_small">
-                Generation 2
+            <section class="step s_small flex-container">
+                <div style="width: 40%; font-size: 26px;">
+                    <p><em>But are these predictions correct?</em></p>
+                </div>
             </section>
-            <section id ="gen3" class="step s_small">
-                Generation 3
+            <section class="step" style="color: white;">""</section>
+            <section class="step s_small">
+                <div style="width:40%;">
+                    <h2>Uncertainty in Neural Networks</h2>
+                    <p>
+                        There is always some uncertainty in the predictions made by neural networks. Consider the neural network to the right, which predicts whether an input image represents a dog or a cat. 
+                    </p>
+                    <p>
+                        Hover over three different input photos to see how the network makes a prediction under uncertainty:
+                    </p>
+                   <div style="width: 90%; text-align: center;" class="flex-container">
+                        <img id="cat" style="width: 28%;" src="figs/intro/cat.png"/>
+                        <img id="dog" style="width: 28%;" src="figs/intro/dog.png"/>
+                        <img id="bird" style="width: 28%;" src="figs/intro/bird.png"/>
+                   </div>
+                    
+                </div>
             </section>
-            <section id ="gen4" class="step s_small">
+            <section class="step" style="width:40%;">
+                <p>
+                    Neural networks predicting potential energy surfaces face similar challenges to those outlined in the example above. While the algorithm predicts data between existing data points very well (similar to the cat and dog), it may fail catastrophically for rare events for which we have little to no data (similar to the bird).
+                </p>
+                <p>
+                    It is possible to retrain the model with additional data; however, gathering this data requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
+                </p>
+            </section>
+            <section class="step" style="width:40%;">
+                <h2>
+                    Adversarial Attacks
+                </h2>
+                <p>
+                    Neural networks can be extremely sensitive to the input data: small changes in the input can result in widly inaccurate predictions. One way to mitigate this is to use adversarial attacks, in which inputs 
+                </p>
+            </section>
+            <section class="step s_small" style="color: white;">""</section>
+            <section id ="gen4" class="step">
                 Generation 4
             </section>
-            <section id ="gen5" class="step s_small">
+            <section id ="gen5" class="step">
                 Generation 5
             </section>
-            <section id ="gen6" class="step s_small">
+            <section id ="gen6" class="step">
                 Generation 6
             </section>
-            <section id ="gen7" class="step s_small">
+            <section id ="gen7" class="step">
                 Generation 7
             </section>
             <section id ="section4" class="step">
@@ -98,9 +134,15 @@
 
             <svg id="svgBlank" class = "visuals"></svg>
             <svg id='svgIntro1' viewBox = "-175 0 350 350" class = "visuals"></svg>
-            <svg id='svgIntro2' viewBox = "0 -50 550 550" class = "visuals"></svg>
+            <svg id='svgIntro2' viewBox = "-225 -50 550 550" class = "visuals"></svg>
+            <svg id='svgIntro3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro3Cat' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro3Dog' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro3Bird' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro3Atom' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
+            <svg id='svgIntro4' viewBox = "-225 -50 575 575" class = "visuals"></svg>
             <svg id='svg1' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
-            <svg id='svgGen1' viewBox = "-800 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen1' viewBox = "-800 5000 5000" class = "visuals"></svg>
             <svg id='svgGen2' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
             <svg id='svgGen3' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
             <svg id='svgGen4' viewBox = "-800 0 2000 2000" class = "visuals"></svg>
@@ -123,5 +165,6 @@
 <script src="scripts/sections/evolution.js"></script>
 <script src="scripts/scenes.js"></script>
 <script src="scripts/scroller.js"></script>
+<script src="scripts/scenes/hover.js"></script>
 
 
