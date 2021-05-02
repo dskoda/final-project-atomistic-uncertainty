@@ -14,6 +14,7 @@ scenes = [
 
     // Intro 3: cats and dogs
     sceneBlank,
+    sceneBlank,
 
     // Intro 4: molecules and question
     sceneBlank,
