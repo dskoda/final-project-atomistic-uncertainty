@@ -33,21 +33,27 @@ let allPoints = [
 const sceneAttacks1 = new SvgFileScene(
     d3.select("#svgAttacks1"),
     contourArea,
-    "figs/intro/pes_above.svg"
+    "figs/intro/pes_above.png"
 );
 const sceneAttacks2 = new SvgFileScene(
     d3.select("#svgAttacks2"),
     contourArea,
-    "figs/doublewell/example.svg",
+    "figs/doublewell/example.png",
 );
 const sceneAttacks3 = new SvgFileScene(
     d3.select("#svgAttacks3"),
     contourArea,
-    "figs/doublewell/example_train.svg",
+    "figs/doublewell/example_train.png",
 );
 
 const sceneAttacks4 = new SvgFileScene(
     d3.select("#svgAttacks4"),
     contourArea,
-    "figs/doublewell/example_attack.svg",
+    "figs/doublewell/example_attack.png",
+);
+
+const sceneLoop1 = new SvgFileScene(
+    d3.select("#svgLoop1"),
+    contourArea,
+    "figs/intro/loop.png",
 );

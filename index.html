@@ -37,13 +37,13 @@
                         A potential energy surface (PES) describes the energy of a system based the configuration of atoms within it. PESes are crucial in the study of materials science for understanding how materials will behave under varying conditions. 
                     </p>
                     <p>
-                        Creating accurate models of these PESes means we can discover and use better materials in many different applications--from characterizing drug activity and toxicity, to creating stronger steel compositions for spacecraft, to developing catalysts for producing oxygen on Mars!
+                        Creating accurate models of these PESes means we can discover and use better materials in many different applications--from characterizing drug activity and toxicity, to creating stronger steel compositions for spacecrafts!
                     </p>
                     <p>
-                        Traditionally, "brute force" methods such as ab initio molecular dynamic simulations are used to generate potential energy surfaces. However, these methods require extremely high computing power, and are cost-prohibitive for larger and more complex materials systems. 
+                        Traditionally, "brute force" methods such as ab initio molecular dynamic simulations are used to map potential energy surfaces. However, these methods are computationally expensive, and are cost-prohibitive for larger and more complex materials systems. 
                     </p>
                     <p>
-                        Fortunately, recent advances in machine learning techniques allow for high-accuracy predictions in less time and at lower costs.
+                        Recent advances in machine learning techniques allow for high-accuracy predictions in less time and at lower costs.
                     </p>
                 </div>
             </section>
@@ -59,13 +59,13 @@
                 <div style="width: 40%">
                     <h2>Neural networks</h2>
                     <p>
-                        One machine learning technique, the neural network, is especially well suited to handle the extensive datasets needed to train PESes for complex materials. 
+                        One machine learning technique, the neural network (NN), is especially well suited to handle the extensive datasets needed to train PESes for complex materials. 
                     </p>
                     <p>
-                        This algorithm receives data from previous ab initio molecular simulations, which measure the energy of a system based on a specific configuration of atoms. 
+                        NNs is typically trained on data from ab initio molecular simulations, which are considered the "ground truth" result for these predictions. 
                     </p>
                     <p>
-                        The neural network then uses these data to make predictions on that system's potential energy surface. This allows us to quickly predict material behavior for configurations that have not been explicitly tested.
+                        The trained neural network are then used to make predictions on that system's potential energy surface. This allows us to quickly predict material behavior for configurations that have not been explicitly tested.
                     </p>
                 </div>
             </section>
@@ -75,11 +75,11 @@
                 </div>
             </section>
             <section class="step" style="color: white;">""</section>
-            <section class="step s_small flex-container" style="width:100%;">
+            <section class="step flex-container" style="width:100%;">
                 <div style="width:40%;">
                     <h2>Prediction uncertainty in neural networks</h2>
                     <p>
-                        There is always some uncertainty in the predictions made by neural networks. Consider the neural network to the right, which predicts whether an input image represents a dog or a cat. 
+                        There is always some uncertainty in the predictions made by neural networks. Consider the neural network to the right, which classifies whether an input image represents a dog or a cat. 
                     </p>
                     <p>
                         Hover over three different input photos to see how the network makes a prediction under uncertainty:
@@ -119,7 +119,7 @@
                     <p><em>One problem, therefore, is: how to assess the reliability of neural network predictions?</em></p>
                 </div>
             </section>
-            <section class="step" style="color: white;">""</section>
+            <section class="step s_small" style="color: white;">""</section>
 
             <section class="step" style="width:40%;">
                 <h2>
@@ -147,7 +147,7 @@
                         Improving the robustness of neural network potentials requires increasing the breadth of their training sets; however, gathering this data usually requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
                     </p>
                 <p>
-                    We propose using adversarial attacks to find the points which the neural network does not predict well. In atomistic simulations, that corresponds to adding a small disturbance &delta; to the input geometry and finding which are the distortions that maximize the uncertainty of the neural network committee. This optimization can be done by simply calculating the gradients of the uncertainty with respect to &delta;.
+                    We use the concept of adversarial attacks from the machine learning literature to find which points the NNs fail to predict. In atomistic simulations, that corresponds to adding a small disturbance &delta; to the input geometry and finding which are the distortions that maximize the uncertainty of the neural network committee. This optimization can be done by simply calculating the gradients of the uncertainty with respect to &delta;.
                 </p>
                 <p> Next, we exemplify how this method works... </p>
             </section>
@@ -157,7 +157,7 @@
                     Exemplifying adversarial attacks
                 </h2>
                     <p>
-                        Consider a 2D potential energy surface such as the one shown on the right. A toy example could be the 2D double well, which is a potential having two basins. We can train a neural network committee to predict this potential energy surface and then analyze the energies and forces predicted by the committee.
+                        Consider a 2D potential energy surface such as the one shown on the right. A toy example could be the 2D double well, which is a potential having two energy states. We can train a neural network committee to predict this potential energy surface and then analyze the energies and forces predicted by the committee.
                     </p>
             </section>
 
@@ -172,38 +172,47 @@
             </section>
             <section class="step" style="width:40%;">
                     <p>
-                        With train
+                        A point close to the training set is likely to have low uncertainty and a reliable PES. The NNs know this region well, and the committee agrees on which should be the predicted energy/forces.
                     </p>
             </section>
             <section class="step" style="width:40%;">
                     <p>
-                        With attacks
+                        An adversarial attack consists of distorting any predicted point to maximize the predicted uncertainty, i.e. the disagreement between the NNs. This point is likely to not be well-represented in the training set, and should be the most informative to calculate using more expensive methods. 
                     </p>
             </section>
-            <section class="step s_small" style="color: white;">""</section>
-            <section id ="gen4" class="step">
-                Generation 4
+            <section class="step" style="width:40%;">
+                    <p>
+                        To improve the performance of the neural network predictions, we can repeat this process in what is called an active learning loop. We start by gathering the data from a training set and training the NNs. Then, we find which are the points that maximize the committee uncertainty and send the new data for evaluation. By repeating this process, we successively improve the predictions of the NNs for the PES without human intervention.
+                    </p>
+                    <p>
+                        This process is a new sampling strategy for obtaining distorted configurations of molecules and improving training sets for NN potentials, and holds promise for automatic potential fitting with low data.
+                    </p>
             </section>
-            <section id ="gen5" class="step">
-                Generation 5
+            <section class="step" style="width:40%;">
+                <h2>
+                    References
+                </h2>
+                    <p>
+                    This visualization was based on the data from the following preprint: <br>
+
+                        D. Schwalbe-Koda, A.R. Tan, R. Gómez-Bombarelli. 
+<a href="https://arxiv.org/abs/2101.11588">Differentiable sampling of molecular geometries with uncertainty-based adversarial attacks.</a> arXiv:2101.11588 (2021).
+                    </p>
+                    <p>
+                        The visualization of the NN classifier for cats/dogs was based on <a href="https://www.inovex.de/blog/uncertainty-quantification-deep-learning/">a post by S. Bachstein</a>.
+                        </p>
             </section>
-            <section id ="gen6" class="step">
-                Generation 6
+            <hr width="100%">
+            <section class="step" style="width:40%;">
+                    <p>
+                        <b> Beyond this 6.859 MVP: </b> in the upcoming weeks, we will add visualizations showing the improvement of the potential energy surfaces and interactions allowing the readers to learn more from them. Visualizing the uncertainty in performance will also be explored in this final project.
+                    </p>
             </section>
-            <section id ="gen7" class="step">
-                Generation 7
-            </section>
-            <section id ="section4" class="step">
-                The End
-            </section>
-            <section class="step" style="color: white;">""</section>
-            <section class="step" style="color: white;">""</section>
-            <section class="step" style="color: white;">""</section>
         </div>
 
 
             <svg id="svgBlank" class = "visuals"></svg>
-            <svg id='svgIntro1' viewBox = "-175 0 350 350" class = "visuals"></svg>
+            <svg id='svgIntro1' viewBox = "-175 -25 350 350" class = "visuals"></svg>
             <svg id='svgIntro2' viewBox = "-225 -50 550 550" class = "visuals"></svg>
             <svg id='svgIntro3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro3Cat' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
@@ -216,11 +225,12 @@
             <svg id='svgUncertainty1' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgUncertainty2' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgUncertainty3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgAttacks1' viewBox = "-200 -50 450 350" class = "visuals"></svg>
-            <svg id='svgAttacks2' viewBox = "-250 -50 600 300" class = "visuals"></svg>
-            <svg id='svgAttacks3' viewBox = "-250 -50 600 300" class = "visuals"></svg>
-            <svg id='svgAttacks4' viewBox = "-250 -50 600 300" class = "visuals"></svg>
-            <svg id='svgGen1' viewBox = "-800 5000 5000" class = "visuals"></svg>
+            <svg id='svgAttacks1' viewBox = "-2200 -400 5000 2400" class = "visuals"></svg>
+            <svg id='svgAttacks2' viewBox = "-3000 -600 6500 2400" class = "visuals"></svg>
+            <svg id='svgAttacks3' viewBox = "-3000 -600 6500 2400" class = "visuals"></svg>
+            <svg id='svgAttacks4' viewBox = "-3000 -600 6500 2400" class = "visuals"></svg>
+            <svg id='svgLoop1' viewBox = "-1000 -200 2000 2000" class = "visuals"></svg>
+            <svg id='svgGen1' viewBox = "-800 -200 5000 5000" class = "visuals"></svg>
             <svg id='svgEnd' class = "visuals"></svg>
 
     </div>
