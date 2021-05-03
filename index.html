@@ -96,7 +96,6 @@
                     <img id="animals" src="figs/intro/nn_hover.png" style="width:90%;"/>
                 </div>
             </section>
-            <section class="step" style="color: white;">""</section>
 
             <section class="step flex-container" style="width:100%;">
                 <div style="width: 40%;">
@@ -122,7 +121,7 @@
                     <p><em>One problem, therefore, is: how to assess the reliability of neural network predictions?</em></p>
                 </div>
             </section>
-            <section class="step s_small" style="color: white;">""</section>
+            <section class="step" style="color: white;">""</section>
 
             <section class="step" style="width:40%;">
                 <h2>
@@ -135,12 +134,11 @@
                         In the case of molecular simulation, it is more interesting to use uncertainty in the predicted forces instead of predicted energy. 
                     </p>
             </section>
-            <section class="step s_small">
+            <section class="step">
                 <div style="width: 40%; font-size: 26px;">
                     <p><em>Now, the follow-up question: how do we improve the robustness of neural networks for atomistic simulations?</em></p>
                 </div>
             </section>
-            <section class="step" style="color: white;">""</section>
 
             <section class="step" style="width:40%;">
                 <h2>
@@ -154,6 +152,8 @@
                 </p>
                 <p> Next, we exemplify how this method works... </p>
             </section>
+            <section class="step" style="color: white;">""</section>
+        
 
             <section class="step" style="width:40%;">
                 <h2>
@@ -183,7 +183,13 @@
                         An adversarial attack consists of distorting any predicted point to maximize the predicted uncertainty, i.e. the disagreement between the NNs. This point is likely to not be well-represented in the training set, and should be the most informative to calculate using more expensive methods. 
                     </p>
             </section>
+            <section class="step">
+                <div style="width: 40%; font-size: 26px;">
+                    <p><em>How do we incorporate learnings from adversarial attacks back into the original model?</em></p>
+                </div>
+            </section>
             <section class="step" style="width:40%;">
+                <h2>Active Learning</h2>
                     <p>
                         To improve the performance of the neural network predictions, we can repeat this process in what is called an active learning loop. We start by gathering the data from a training set and training the NNs. Then, we find which are the points that maximize the committee uncertainty and send the new data for evaluation. By repeating this process, we successively improve the predictions of the NNs for the PES without human intervention.
                     </p>
@@ -215,7 +221,7 @@
 
 
             <svg id="svgBlank" class = "visuals"></svg>
-            <svg id='svgIntro1' viewBox = "-175 -25 350 350" class = "visuals"></svg>
+            <svg id='svgIntro1' viewBox = "-175 -10 350 350" class = "visuals"></svg>
             <svg id='svgIntro2' viewBox = "-225 -50 550 550" class = "visuals"></svg>
             <svg id='svgIntro3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro3Cat' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>

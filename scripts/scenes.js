@@ -18,21 +18,20 @@ scenes = [
 
     // Intro 4: molecules and question
     sceneBlank,
-    sceneBlank,
     sceneUncertainty1,
 
     // Spacing, uncertainty ensemble, and question
     sceneUncertainty2,
     sceneUncertainty2,
-    sceneUncertainty2,
 
     // Attacks
     sceneUncertainty3,
+    sceneBlank,
     sceneAttacks1,
     sceneAttacks2,
     sceneAttacks3,
     sceneAttacks4,
-    // sceneBlank,
+    sceneBlank,
 
     // Loop
     sceneLoop1,
