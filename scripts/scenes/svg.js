@@ -139,7 +139,7 @@ class SvgSliderScene extends Scene {
 
         this.svg
         .append('g')
-        .call(sliderImage);
+        .call(this.sliderImage);
     }
 
     sliderImage() {
@@ -151,7 +151,7 @@ class SvgSliderScene extends Scene {
             .step(1)
             .tickValues([1, 4])
             .tickFormat(d3.format('.0f'))
-            .width(this.area.width)
+            .width(this.width)
             .displayValue(true)
             .fill('blue')
             .default(1)
