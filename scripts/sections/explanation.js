@@ -52,8 +52,8 @@ const sceneAttacks4 = new SvgFileScene(
     "figs/doublewell/example_attack.png",
 );
 
-const sceneLoop1 = new SvgFileScene(
-    d3.select("#svgLoop1"),
-    contourArea,
-    "figs/intro/loop.png",
-);
+// const sceneLoop1 = new SvgFileScene(
+//     d3.select("#svgLoop1"),
+//     contourArea,
+//     "figs/intro/loop.png",
+// );

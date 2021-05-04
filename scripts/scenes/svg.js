@@ -1,7 +1,6 @@
 class SvgFileScene extends Scene {
     constructor(svg, area, file) {
         super(svg, area)
-
         this.addFile(file);
     }
 
@@ -133,11 +132,11 @@ class SvgSliderScene extends Scene {
     constructor(svg, area, file_array) {
         super(svg, area)
 
-        this.height = area.height;
-        this.width = area.width;
+        // this.height = area.height;
+        // this.width = area.width;
         this.file_array = file_array;
         console.log(area);
-
+        //comment
         this.svg
         .append('g')
         .call(this.sliderImage);
@@ -152,7 +151,7 @@ class SvgSliderScene extends Scene {
             .step(1)
             .tickValues([1, 4])
             .tickFormat(d3.format('.0f'))
-            .width(window.width)
+            // .width(window.width)
             .displayValue(true)
             .fill('blue')
             .default(1)
