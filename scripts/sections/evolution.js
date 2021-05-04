@@ -34,3 +34,13 @@ const sceneGen7 = new SvgFileScene(
     "figs/doublewell/gen7.svg",
 );
 
+
+
+const file_array = ["figs/doublewell/gen1.svg", "figs/doublewell/gen2.svg", "figs/doublewell/gen3.svg", "figs/doublewell/gen4.svg"]
+
+const sceneLoop1 = new SvgSliderScene(
+    d3.select("#svgLoop1"),
+    contourArea,
+    file_array
+);
+
