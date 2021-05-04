@@ -36,10 +36,10 @@ const sceneGen7 = new SvgFileScene(
 
 
 
-const file_array = ["figs/doublewell/gen1.svg", "figs/doublewell/gen2.svg", "figs/doublewell/gen3.svg", "figs/doublewell/gen4.svg"]
-const sceneLoop1 = new SvgSliderScene(
-    d3.select("#svgLoop1"),
-    {height: window.height, width:window.width},
-    file_array
-);
+// const file_array = ["figs/doublewell/gen1.svg", "figs/doublewell/gen2.svg", "figs/doublewell/gen3.svg", "figs/doublewell/gen4.svg"]
+// const sceneLoop1 = new SvgSliderScene(
+//     d3.select("#svgLoop1"),
+//     area,
+//     file_array,
+// );
 

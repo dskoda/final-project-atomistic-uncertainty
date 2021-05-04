@@ -136,6 +136,7 @@ class SvgSliderScene extends Scene {
         this.height = area.height;
         this.width = area.width;
         this.file_array = file_array;
+        console.log(area);
 
         this.svg
         .append('g')
@@ -151,7 +152,7 @@ class SvgSliderScene extends Scene {
             .step(1)
             .tickValues([1, 4])
             .tickFormat(d3.format('.0f'))
-            .width(this.width)
+            .width(window.width)
             .displayValue(true)
             .fill('blue')
             .default(1)
@@ -162,15 +163,15 @@ class SvgSliderScene extends Scene {
                 .size(200)()
             )
             .on('onchange', num => {
-                let index = num;
-                this.updateImage(index);
+                // let index = num;
+                // this.updateImage(index);
             });
     }
 
-    updateImage(index){
-        this.svg.append('image')
-            .attr("xlink:href", this.file_array[index]);
-    }
+    // updateImage(index){
+    //     this.svg.append('image')
+    //         .attr("xlink:href", this.file_array[index]);
+    // }
 
     render () {
         d3.selectAll(".visuals")
