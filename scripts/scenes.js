@@ -49,5 +49,8 @@ function changeScenes(index) {
         .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
 
     console.log(`Section ${index}`);
+    console.log(sectionPositions);
+
     scenes[index].render();
+    
 }

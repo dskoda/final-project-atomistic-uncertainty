@@ -12,8 +12,8 @@ sections.each(function(d,i) {
     sectionPositions.push(top - startPos);
 });
 
-console.log("hello");
-console.log(sectionPositions);
+
+
 let scroll = scroller();
 scroll(d3.selectAll('.step'));
 scroll.on('active', changeScenes);
@@ -48,6 +48,7 @@ function scroller() {
      */
     function scroll(els) {
         sections = els;
+        
 
         // when window is scrolled call
         // position. When it is resized
