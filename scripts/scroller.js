@@ -13,7 +13,7 @@ sections.each(function(d,i) {
 });
 
 
-
+console.log(sectionPositions);
 let scroll = scroller();
 scroll(d3.selectAll('.step'));
 scroll.on('active', changeScenes);
