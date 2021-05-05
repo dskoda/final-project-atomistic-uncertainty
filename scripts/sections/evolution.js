@@ -35,11 +35,16 @@ const sceneGen7 = new SvgFileScene(
 );
 
 
+const svg_array = [d3.select("#svg1"), d3.select("#svg2"), d3.select("#svg3"), d3.select("#svg4")];
+const file_array = ["figs/doublewell/gen1.svg", "figs/doublewell/gen2.svg", "figs/doublewell/gen3.svg", "figs/doublewell/gen4.svg"];
 
-const file_array = ["figs/doublewell/gen1.svg", "figs/doublewell/gen2.svg", "figs/doublewell/gen3.svg", "figs/doublewell/gen4.svg"]
-const sceneLoop1 = new SvgSliderScene(
-    d3.select("#svgLoop1"),
-    contourArea,
-    file_array,
+const slide = new SvgSlider(
+    d3.select("#slider"),
+    contourArea,    
 );
 
+const sceneEvolution = new SvgEvolutionScene(
+    svg_array,
+    contourArea,
+    file_array    
+);

@@ -128,22 +128,14 @@ class SvgPlotScene extends SvgFileScene {
 }
 
 
-class SvgSliderScene extends Scene {
-    constructor(svg, area, file_array) {
+class SvgSlider extends Scene {
+    constructor(svg, area) {
+        
         super(svg, area)
-
-        // this.height = area.height;
-        // this.width = area.width;
-        this.file_array = file_array;
-        console.log(area);
-        //comment
-        this.svg
-        .append('g')
-        .call(this.sliderImage);
+        this.sliderImage(this.svg);
     }
 
-    sliderImage() {
-    
+    sliderImage(svg) {
             let slider = d3
             .sliderBottom()
             .min(1)
@@ -151,7 +143,7 @@ class SvgSliderScene extends Scene {
             .step(1)
             .tickValues([1, 4])
             .tickFormat(d3.format('.0f'))
-            // .width(window.width)
+            .width(500)
             .displayValue(true)
             .fill('blue')
             .default(1)
@@ -162,25 +154,48 @@ class SvgSliderScene extends Scene {
                 .size(200)()
             )
             .on('onchange', num => {
-                // let index = num;
-                // this.updateImage(index);
+                slider_index = num-1;
+                sceneEvolution.render();
+                
             });
+
+            svg
+            .attr('width', 600)
+            .append('g')
+            .attr('transform', `translate(${15},10)`)
+            .style("font-size", "18px")
+            .call(slider);
     }
 
-    // updateImage(index){
-    //     this.svg.append('image')
-    //         .attr("xlink:href", this.file_array[index]);
-    // }
 
+}
+
+
+class SvgEvolutionScene {
+    constructor(svg_array, area, file_array) {
+        this.svg_array = svg_array
+        this.file_array = file_array
+
+        for (const x of this.svg_array.keys()){
+            this.svg_array[x]
+            .attr('width', area.width)
+            .attr('height', area.height);
+
+            this.svg_array[x].append('image')
+            .attr("xlink:href", this.file_array[x]);
+        }
+    }
+
+  
     render () {
         d3.selectAll(".visuals")
             .transition()
-            .duration(500)
+            .duration(0)
             .attr("opacity", 0);
 
-        this.svg
+        this.svg_array[slider_index]
             .transition()
-            .duration(300)
+            .duration(0)
             .attr("opacity", 1);
     }
 }
