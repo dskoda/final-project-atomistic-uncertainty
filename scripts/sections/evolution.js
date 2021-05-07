@@ -1,5 +1,5 @@
 const svg_array = [d3.select("#svg1"), d3.select("#svg2"), d3.select("#svg3"), d3.select("#svg4"), d3.select("#svg5"), d3.select("#svg6"), d3.select("#svg7")];
-const file_array = ["figs/doublewell/gen1.svg", "figs/doublewell/gen2.svg", "figs/doublewell/gen3.svg", "figs/doublewell/gen4.svg", "figs/doublewell/gen5.svg", "figs/doublewell/gen6.svg","figs/doublewell/gen7.svg"];
+const file_array = ["figs/doublewell/gen1.png", "figs/doublewell/gen2.png", "figs/doublewell/gen3.png", "figs/doublewell/gen4.png", "figs/doublewell/gen5.png", "figs/doublewell/gen6.png","figs/doublewell/gen7.png"];
 
 const sceneGen1 = new SvgFileScene(
     d3.select("#svgGen1"),
