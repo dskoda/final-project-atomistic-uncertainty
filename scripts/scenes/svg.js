@@ -163,7 +163,6 @@ class SvgSlider extends Scene {
             .attr('width', 600)
             .append('g')
             .attr('transform', `translate(${15},10)`)
-            .style("font-size", "18px")
             .call(slider);
     }
 
