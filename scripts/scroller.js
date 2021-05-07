@@ -12,7 +12,7 @@ sections.each(function(d,i) {
     sectionPositions.push(top - startPos);
 });
 
-
+// console.log(sectionPositions);
 
 let scroll = scroller();
 scroll(d3.selectAll('.step'));

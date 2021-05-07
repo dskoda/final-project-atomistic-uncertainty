@@ -139,9 +139,9 @@ class SvgSlider extends Scene {
             let slider = d3
             .sliderBottom()
             .min(1)
-            .max(4)
+            .max(7)
             .step(1)
-            .tickValues([1, 4])
+            .tickValues([1, 2,3,4,5,6,7])
             .tickFormat(d3.format('.0f'))
             .width(500)
             .displayValue(true)

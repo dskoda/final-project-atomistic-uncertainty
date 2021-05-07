@@ -32,3 +32,17 @@ position: fixed;
     flex-direction: row;
     justify-content: space-between;
 }
+
+.slider text {
+    font-size: 18px;
+  }
+
+.axis text {
+    font-size: 18px;
+  }
+
+.pageslider {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
