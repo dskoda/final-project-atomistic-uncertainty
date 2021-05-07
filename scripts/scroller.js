@@ -1,18 +1,22 @@
 // Scrolling functions  
 let sections = d3.selectAll('.step');
-let sectionPositions = [];
 let startPos;
+// let sectionPositions = [];
 
-sections.each(function(d,i) {
-    let top = this.getBoundingClientRect().top;
-    //console.log(top)
-    if(i === 0) {
-        startPos = top;
-    }
-    sectionPositions.push(top - startPos);
-});
+// sections.each(function(d,i) {
+//     let top = this.getBoundingClientRect().top;
+//     //console.log(top)
+//     if(i === 0) {
+//         startPos = top;
+//     }
+//     sectionPositions.push(top - startPos);
+// });
 
-// console.log(sectionPositions);
+
+let sectionPositions = [0, 808, 1219, 1349, 1867, 2226, 2408, 2926, 3837, 4766, 5326, 5844, 6533, 7123, 7900, 8418, 9055, 9697, 10251, 10823, 11413, 12137, 12825, 13506 ];
+console.log(sectionPositions);
+
+
 
 let scroll = scroller();
 scroll(d3.selectAll('.step'));
