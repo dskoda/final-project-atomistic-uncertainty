@@ -13,7 +13,7 @@ let startPos;
 // });
 
 
-let sectionPositions = [0, 808, 1219, 1349, 1867, 2226, 2408, 2926, 3837, 4766, 5326, 5844, 6533, 7123, 7900, 8418, 9055, 9697, 10251, 10823, 11413, 12137, 12825, 13506 ];
+let sectionPositions = [0, 826, 1422, 1357, 2081, 2556, 2743, 3267, 4153, 5055, 5660, 6184, 7000, 7605, 8360, 8884, 9586, 10296, 10892, 11536, 12141, 13091, 13356, 14090, 15269 ];
 console.log(sectionPositions);
 
 
@@ -75,7 +75,7 @@ function scroller() {
      *
      */
     function position() {
-        let pos = window.pageYOffset - 10;
+        let pos = window.pageYOffset - 200;
         let sectionIndex = d3.bisect(sectionPositions, pos);
         sectionIndex = Math.min(sections.size() - 1, sectionIndex);
 
