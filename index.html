@@ -17,7 +17,7 @@
 <body>
     <div>
         <div id="sections" style="width: 95%;">
-            <section class="step">
+            <section class="step" id="beginning">
                 <div style="text-align: center;">
                     <h1>
                         Visualizing Uncertainty in Molecular Simulation
@@ -30,7 +30,7 @@
                     
                 </div>
             </section>
-            <section class="step s_small">
+            <section class="step s_small" id="introduction">
                 <div style="width:40%;">
                     <h2>Understanding material behavior</h2>
                     <p>
@@ -283,6 +283,12 @@
             <svg id='svgEnd' class = "visuals"></svg>
 
     </div>
+    <nav class="section-nav">
+        <ol>
+            <li><a href="#beginning">Start</a></li>
+            <li><a href="#introduction">Intro</a></li>
+        </ol>
+    </nav>
 </body>
 
 <script src="scripts/scenes/base.js"></script>
