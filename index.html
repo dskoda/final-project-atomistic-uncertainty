@@ -20,7 +20,7 @@
         <div id="toc" class="toc">
             <nav class="section-nav">
                 <ol>
-                    <li><a style="color:black">Go to:</a></li> <p>
+                    <li><a style="color:black">Jump to:</a></li> <p>
                     <li><a href="#top_">Top</a></li>
                     <li><a href="#intro_">Introduction</a></li>
                     <li><a href="#nns_">NNs</a></li>
@@ -221,14 +221,15 @@
                     <svg id='slider'></svg>                        
                 </div>    
             </section>
+            <section class="step" style="color: white;" id="active_blank">""</section>
 
             <section class="step" style="width:40%;" id="active_performance">   
                 <p>
-                    We can perform this active learning loop several times and verify whether the adversarial sampling strategy is useful or not. The plot on the right compares the root mean square error (RMSE), number of sampled points, and the energy of the points on the PES according to their sampling method (attack or random). 100 independent loops were run to compare both methods.
+                    We can perform this active learning loop several times and verify whether the adversarial sampling strategy is useful or not. The plot on the right compares the root mean square error (RMSE), number of sampled points, and the energy of the points on the PES according to their sampling method (attack or random). 100 independent loops were run to compare both methods. The shaded area indicates the interquartile range, and the solid line is the median performance of each experiment.
                 </p>
                 <p>
-                    The shaded area indicates the interquartile range, and the solid line is the median performance of each experiment.
-                </p>
+                    The graphs indicate that the adversarial sampling strategy outperforms random sampling in all aspects under comparison: the final NNs are more accurate (RMSE ~3 times smaller); less points are sampled; and the energy of the sampled points is smaller, suggesting the attacks lead to configurations more meaningful at lower temperatures.
+               </p>
 
             </section>
 
@@ -323,30 +324,4 @@
 <script src="scripts/scenes.js"></script>
 <script src="scripts/scroller.js"></script>
 <script src="scripts/scenes/hover.js"></script>
-
-<script>
-    let re = RegExp('([a-z]+)_');
-
-    window.addEventListener('DOMContentLoaded', () => {
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                const sect = re.exec(id)[0];
-                console.log(sect);
-                if (entry.intersectionRatio > 0) {
-                    document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.add('active');
-                } else {
-                    document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.remove('active');
-                }
-            });
-        });
-
-        // Track all sections that have an `id` applied
-        document.querySelectorAll('section[id]').forEach((section) => {
-            observer.observe(section);
-        });
-
-    });
-
-</script>
+<script src="scripts/toc.js"> </script>
