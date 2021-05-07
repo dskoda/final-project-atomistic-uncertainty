@@ -14,10 +14,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<main>
     <div>
-        <div id="sections" style="width: 95%;">
-            <section class="step" id="beginning">
+        <div id="sections" style="width: 85%;">
+        <div id="toc" class="toc">
+            <nav class="section-nav">
+                <ol>
+                    <li><a style="color:black">Go to:</a></li> <p>
+                    <li><a href="#top_">Top</a></li>
+                    <li><a href="#intro_">Introduction</a></li>
+                    <li><a href="#nns_">NNs</a></li>
+                    <li><a href="#error_">Error</a></li>
+                    <li><a href="#uq_">Uncertainty</a></li>
+                    <li><a href="#attack_">Adv. Attacks</a></li>
+                    <li><a href="#active_">Active Learning</a></li>
+                    <li><a href="#references_">References</a></li>
+                    <li><a href="#future_">Future Work</a></li>
+                </ol>
+            </nav>
+        </div>
+            <section class="step" id="top_">
                 <div style="text-align: center;">
                     <h1>
                         Visualizing Uncertainty in Molecular Simulation
@@ -30,7 +46,7 @@
                     
                 </div>
             </section>
-            <section class="step s_small" id="introduction">
+            <section class="step s_small" id="intro_">
                 <div style="width:40%;">
                     <h2>Understanding material behavior</h2>
                     <p>
@@ -47,15 +63,15 @@
                     </p>
                 </div>
             </section>
-            <section class="step s_small">
+            <section class="step s_small" id="intro_question">
                 <div style="width: 40%; font-size: 26px;">
                     <p><em>Let's take a look at how this works...</em></p>
                 </div>
             </section>
-            <section class="step" style="color: white;">""</section>
+            <section class="step" style="color: white;" id="intro_blank">""</section>
 
 
-            <section class="step s_small flex-container">
+            <section class="step s_small flex-container" id="nns_">
                 <div style="width: 40%">
                     <h2>Neural networks</h2>
                     <p>
@@ -69,19 +85,19 @@
                     </p>
                 </div>
             </section>
-            <section class="step s_small flex-container">
+            <section class="step s_small flex-container" id="nns_question">
                 <div style="width: 40%; font-size: 26px;">
                     <p><em>But are these predictions accurate?</em></p>
                 </div>
             </section>
-            <section class="step" style="color: white;">""</section>
+            <section class="step" style="color: white;" id="nns_blank">""</section>
 
 
-            <section class="step flex-container" style="width:100%;">
+            <section class="step flex-container" style="width:100%;" id="error_">
                 <div style="width:40%;">
-                    <h2>Prediction uncertainty in neural networks</h2>
+                    <h2>Prediction error in neural networks</h2>
                     <p>
-                        There is always some uncertainty in the predictions made by neural networks. Consider the neural network to the right, which classifies whether an input image represents a dog or a cat. 
+                        There is always some error in the predictions made by neural networks. Consider the neural network to the right, which classifies whether an input image represents a dog or a cat. 
                     </p>
                     <p>
                         Hover over three different input photos to see how the network makes a prediction under uncertainty:
@@ -97,7 +113,7 @@
                 </div>
             </section>
 
-            <section class="step flex-container" style="width:100%;">
+            <section class="step flex-container" style="width:100%;" id="error_mol">
                 <div style="width: 40%;">
                     <p>
                         Neural networks predicting potential energy surfaces face similar challenges to those outlined in the example above. While the algorithm predicts data between existing data points very well (similar to the cat and dog), it may fail catastrophically for rare events for which we have little to no data (similar to the bird).
@@ -116,14 +132,14 @@
                 </div>
             </section>
 
-            <section class="step">
+            <section class="step" id="error_question">
                 <div style="width: 40%; font-size: 26px;">
                     <p><em>One problem, therefore, is: how to assess the reliability of neural network predictions?</em></p>
                 </div>
             </section>
-            <section class="step" style="color: white;">""</section>
+            <section class="step" style="color: white;" id="error_blank">""</section>
 
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="uq_">
                 <h2>
                     Uncertainty Quantification
                 </h2>
@@ -134,13 +150,13 @@
                         In the case of molecular simulation, it is more interesting to use uncertainty in the predicted forces instead of predicted energy. 
                     </p>
             </section>
-            <section class="step">
+            <section class="step" id="uq_question">
                 <div style="width: 40%; font-size: 26px;">
                     <p><em>Now, the follow-up question: how do we improve the robustness of neural networks for atomistic simulations?</em></p>
                 </div>
             </section>
 
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="attack_">
                 <h2>
                     Adversarial Attacks
                 </h2>
@@ -152,10 +168,10 @@
                 </p>
                 <p> Next, we exemplify how this method works... </p>
             </section>
-            <section class="step" style="color: white;">""</section>
+            <section class="step" style="color: white;" id="attack_blank">""</section>
         
 
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="attack_ex">
                 <h2>
                     Exemplifying adversarial attacks
                 </h2>
@@ -165,7 +181,7 @@
             </section>
 
 
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="attack_explain1">
                     <p>
                         Say that, after training the neural networks, we obtain the predictions and uncertainties on the right. The plot on the left indicates the mean energy predicted by the ensemble, while the plot on the right depicts a metric of uncertainty.
                     </p>
@@ -173,22 +189,22 @@
                         The neural networks were trained by having very little information about the rightmost basin of the double well, but several data points on the left basin. As a consequence, the uncertainty is much higher on the right than on the left.
                     </p>
             </section>
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="attack_explain2">
                     <p>
                         A point close to the training set is likely to have low uncertainty and a reliable PES. The NNs know this region well, and the committee agrees on which should be the predicted energy/forces.
                     </p>
             </section>
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="attack_explain3">
                     <p>
                         An adversarial attack consists of distorting any predicted point to maximize the predicted uncertainty, i.e. the disagreement between the NNs. This point is likely to not be well-represented in the training set, and should be the most informative to calculate using more expensive methods. 
                     </p>
             </section>
-            <section class="step">
+            <section class="step" id="attack_question">
                 <div style="width: 40%; font-size: 26px;">
                     <p><em>How do we incorporate learnings from adversarial attacks back into the original model?</em></p>
                 </div>
             </section>
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="active_">
                 <h2>Active Learning</h2>
                     <p>
                         To improve the performance of the neural network predictions, we can repeat this process in what is called an active learning loop. We start by gathering the data from a training set and training the NNs. Then, we find which are the points that maximize the committee uncertainty and send the new data for evaluation. By repeating this process, we successively improve the predictions of the NNs for the PES without human intervention.
@@ -198,7 +214,7 @@
                     </p>
             </section>
 
-            <section class="step" style="width:100%;">   
+            <section class="step" style="width:100%;" id="active_evolution">   
                 <p>
                     Use the slider to see changes in energy surface with number of adversarial attacks
                 </p>
@@ -210,7 +226,7 @@
 
 
 
-            <section class="step" style="width:40%;">
+            <section class="step" style="width:40%;" id="references_">
                 <h2>
                     References
                 </h2>
@@ -225,7 +241,7 @@
                         </p>
             </section>
             <hr width="100%">
-            <section class="step flex-container" style="width:100%;">
+        <section class="step flex-container" style="width:100%;" id="future_">
                 <div style="width: 40%;">
                     <h2> Beyond this 6.859 MVP </h2>
                     <h3>Future Work</h3>
@@ -249,6 +265,7 @@
                     <img src="figs/intro/future_work.png" style="padding-left: 40px; width: 90%; text-align: center;"/>
                 </div>
             </section>
+
             </div>
 
 
@@ -283,13 +300,7 @@
             <svg id='svgEnd' class = "visuals"></svg>
 
     </div>
-    <nav class="section-nav">
-        <ol>
-            <li><a href="#beginning">Start</a></li>
-            <li><a href="#introduction">Intro</a></li>
-        </ol>
-    </nav>
-</body>
+</main>
 
 <script src="scripts/scenes/base.js"></script>
 <script src="scripts/scenes/title.js"></script>
@@ -304,4 +315,28 @@
 <script src="scripts/scroller.js"></script>
 <script src="scripts/scenes/hover.js"></script>
 
+<script>
+    let re = RegExp('([a-z]+)_');
 
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const sect = re.exec(id)[0];
+                if (entry.intersectionRatio > 0) {
+                    document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.add('active');
+                } else {
+                    document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.remove('active');
+                }
+            });
+        });
+
+        // Track all sections that have an `id` applied
+        document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+        });
+
+    });
+
+</script>
