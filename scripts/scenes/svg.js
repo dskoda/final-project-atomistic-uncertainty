@@ -189,12 +189,12 @@ class SvgEvolutionScene {
     render () {
         d3.selectAll(".visuals")
             .transition()
-            .duration(0)
+            .duration(300)
             .attr("opacity", 0);
 
         this.svg_array[slider_index]
             .transition()
-            .duration(0)
+            .duration(150)
             .attr("opacity", 1);
     }
 }

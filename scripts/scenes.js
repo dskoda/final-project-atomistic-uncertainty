@@ -36,6 +36,7 @@ scenes = [
     // Loop
     sceneLoop1,
     sceneEvolution,
+    sceneActivePerf,
     sceneBlank,
     sceneBlank,
     sceneBlank,

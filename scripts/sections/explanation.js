@@ -57,3 +57,9 @@ const sceneLoop1 = new SvgFileScene(
     contourArea,
     "figs/intro/loop.png",
 );
+
+const sceneActivePerf = new SvgFileScene(
+    d3.select("#svgActivePerf"),
+    contourArea,
+    "figs/intro/conclusion.png",
+)

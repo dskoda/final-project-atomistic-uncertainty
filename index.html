@@ -209,21 +209,28 @@
                     <p>
                         To improve the performance of the neural network predictions, we can repeat this process in what is called an active learning loop. We start by gathering the data from a training set and training the NNs. Then, we find which are the points that maximize the committee uncertainty and send the new data for evaluation. By repeating this process, we successively improve the predictions of the NNs for the PES without human intervention.
                     </p>
-                    <p>
-                        This process is a new sampling strategy for obtaining distorted configurations of molecules and improving training sets for NN potentials, and holds promise for automatic potential fitting with low data.
-                    </p>
             </section>
 
-            <section class="step" style="width:100%;" id="active_evolution">   
+            <section class="step" style="width:40%;" id="active_evolution">   
                 <p>
-                    Use the slider to see changes in energy surface with number of adversarial attacks
+                    As we execute the loop iteratively, the neural networks predict a better potential energy surface and the overall predicted uncertainty gets lower. The figure shows the evolution of the predictions, the training points points and adversarial attacks.
                 </p>
 
                 <div>
+                    Change the slider below to see how the PES evolves with the number of times the loop is executed (active learning generation).
                     <svg id='slider'></svg>                        
                 </div>    
             </section>
 
+            <section class="step" style="width:40%;" id="active_performance">   
+                <p>
+                    We can perform this active learning loop several times and verify whether the adversarial sampling strategy is useful or not. The plot on the right compares the root mean square error (RMSE), number of sampled points, and the energy of the points on the PES according to their sampling method (attack or random). 100 independent loops were run to compare both methods.
+                </p>
+                <p>
+                    The shaded area indicates the interquartile range, and the solid line is the median performance of each experiment.
+                </p>
+
+            </section>
 
 
             <section class="step" style="width:40%;" id="references_">
@@ -297,6 +304,8 @@
             <svg id='svg6' viewBox = "-3000 -600 6500 2400" class = "visuals"></svg>
             <svg id='svg7' viewBox = "-3000 -600 6500 2400" class = "visuals"></svg>
             
+            <svg id='svgActivePerf' viewBox = "-1000 -200 2000 2000" class = "visuals"></svg>
+
             <svg id='svgEnd' class = "visuals"></svg>
 
     </div>
