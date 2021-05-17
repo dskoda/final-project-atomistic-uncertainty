@@ -16,7 +16,7 @@ The descriptors are the texts which provide contextual information on the visual
 
 The visuals are the images and graphs that condense all the findings of the research. They are rich in information and are complementary to the descriptor. Unlike the descriptors which position and opacity change with scrolling, only the opacity of the visuals changes with scrolling. Select images fade into vision as user scrolls through the page. The positions of the visuals are all fixed and do not change with scrolling. We also included some interactivity with the visuals to allow users to quickly explore a few points within a complex manifold and see the impact of their proposed changes.  
 
-The navigator is a shortcut function on the top left side of the page which allows users to quickly navigate to a section without being constrained by the flow of the scroller. We built the navigator based on feedback from our peers who wanted more flexibility in accessing a wide range of sections quickly. We learned that this tool helps users to revise and reinforce concepts quickly by jumping between different sections instantaneously.  
+The navigator is a shortcut function on the top left side of the page which allows users to quickly navigate to a section without being constrained by the flow of the scroller. We built the navigator based on feedback from our peers who wanted more flexibility in accessing a wide range of sections quickly. We learned that this tool helps users to revise and reinforce concepts by jumping between different sections instantaneously.  
 
 
 ## Development Process
