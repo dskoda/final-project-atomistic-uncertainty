@@ -9,9 +9,10 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log(sect);
             if (entry.intersectionRatio > 0) {
                 document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.add('active');
-            } else {
-                document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.remove('active');
             }
+            //else {
+            //    document.querySelector(`nav li a[href="#${sect}"]`).parentElement.classList.remove('active');
+            //}
         });
     });
 
