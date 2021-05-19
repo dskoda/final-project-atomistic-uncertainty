@@ -56,7 +56,7 @@
                         Creating accurate models of these PESes means we can discover and use better materials in many different applications--from characterizing drug activity and toxicity, to creating stronger steel compositions for spacecrafts!
                     </p>
                     <p>
-                        Traditionally, "brute force" methods such as ab initio molecular dynamic simulations are used to map potential energy surfaces. However, these methods are computationally expensive, and are cost-prohibitive for larger and more complex materials systems. 
+                        Traditionally, computationally expensive methods such as ab initio simulations are used to map potential PESes. However, these methods quickly become prohibitive when a larger number of materials are screened. 
                     </p>
                     <p>
                         Recent advances in machine learning techniques allow for high-accuracy predictions in less time and at lower costs.
@@ -75,13 +75,13 @@
                 <div style="width: 40%">
                     <h2>Neural networks</h2>
                     <p>
-                        One machine learning technique, the neural network (NN), is especially well suited to handle the extensive datasets needed to train PESes for complex materials. 
+                        One machine learning tool, the neural network (NN), is especially well suited to handle the extensive datasets needed to train PESes for complex materials. 
                     </p>
                     <p>
-                        NNs is typically trained on data from ab initio molecular simulations, which are considered the "ground truth" result for these predictions. 
+                        NNs is typically trained on data from quantum chemistry simulations, which are considered the "ground truth" result for these predictions. 
                     </p>
                     <p>
-                        The trained neural network is then used to make predictions on that system's potential energy surface. This allows us to quickly predict material behavior for configurations that have not been explicitly tested.
+                        The trained neural network is then used to make predictions on that system's PES for any given geometry.
                     </p>
                 </div>
             </section>
@@ -97,10 +97,10 @@
                 <div style="width:40%;">
                     <h2>Prediction error in neural networks</h2>
                     <p>
-                        There is always some error in the predictions made by neural networks. Consider the neural network to the right, which classifies whether an input image represents a dog or a cat. 
+                        There is always some error associated to NN predictions. Consider the neural network on the right, which classifies whether an input image represents a dog or a cat. 
                     </p>
                     <p>
-                        Hover over three different input photos to see how the network makes a prediction under uncertainty:
+                        Hover over the three different input photos to see what the NN predicts...
                     </p>
                    <div style="width: 90%; text-align: center;" class="flex-container">
                         <img id="cat" style="width: 28%;" src="figs/intro/cat.png"/>
@@ -116,7 +116,7 @@
             <section class="step flex-container" style="width:100%;" id="error_mol">
                 <div style="width: 40%;">
                     <p>
-                        Neural networks predicting potential energy surfaces face similar challenges to those outlined in the example above. While the algorithm predicts data between existing data points very well (similar to the cat and dog), it may fail catastrophically for rare events for which we have little to no data (similar to the bird).
+                        Neural networks predicting PESes face similar challenges to those outlined in the example above. While the algorithm interpolates between existing data points very well (similar to the cat and dog), it may fail catastrophically for cases for which we have little to no data (similar to the bird).
                     </p>
                     <p>
                         Hover over the three different input geometries to see how the network makes a prediction under uncertainty:
@@ -164,7 +164,7 @@
                         Improving the robustness of neural network potentials requires increasing the breadth of their training sets; however, gathering this data usually requires time-consuming and costly simulations. It is therefore crucial to only gather data that will significantly improve the model's ability to make accurate predictions.
                     </p>
                 <p>
-                    We use the concept of adversarial attacks from the machine learning literature to find which points the NNs fail to predict. In atomistic simulations, that corresponds to adding a small disturbance &delta; to the input geometry and finding which are the distortions that maximize the uncertainty of the neural network committee. This optimization can be done by simply calculating the gradients of the uncertainty with respect to &delta;.
+                    We use the concept of adversarial attacks from the machine learning literature to find which molecular geometries the NNs fail to predict. In atomistic simulations, that corresponds to adding a small disturbance &delta; to the input geometry and finding which are the distortions that maximize the uncertainty of the neural network committee. 
                 </p>
                 <p> Next, we exemplify how this method works... </p>
             </section>
@@ -186,7 +186,7 @@
                         Say that, after training the neural networks, we obtain the predictions and uncertainties on the right. The plot on the left indicates the mean energy predicted by the ensemble, while the plot on the right depicts a metric of uncertainty.
                     </p>
                     <p>
-                        The neural networks were trained by having very little information about the rightmost basin of the double well, but several data points on the left basin. As a consequence, the uncertainty is much higher on the right than on the left.
+                        The neural networks were trained having very little information about the rightmost basin of the double well, but several data points on the left basin. As a consequence, the uncertainty is much higher on the right than on the left.
                     </p>
             </section>
             <section class="step" style="width:40%;" id="attack_explain2">
