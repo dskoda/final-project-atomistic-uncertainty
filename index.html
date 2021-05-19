@@ -16,11 +16,11 @@
 
 <main>
     <div>
-        <div id="sections" style="width: 85%;">
-        <div id="toc" class="toc">
-            <nav class="section-nav">
+        <div id="sections" style="width: 80%;">
+        <div id="toc" class="toc" style="background-color: #989898; height: 100%; width: 10%;">
+            <nav class="section-nav" >
                 <ol>
-                    <li><a style="color:black">Jump to:</a></li> <p>
+                    <li><a style="color:black">Jump to...</a></li> <p>
                     <li><a href="#top_">Top</a></li>
                     <li><a href="#intro_">Introduction</a></li>
                     <li><a href="#nns_">NNs</a></li>
@@ -41,7 +41,7 @@
                     <p>
                         By Aik Jun Tan, Daniel Schwalbe-Koda, and Franklin Morgan
                     </p>  
-                    <img style="padding-top: 30px; padding-bottom: 20px; width: 40%;" src="figs/intro/geometries.png"/>
+                    <img style="padding-top: 30px; padding-bottom: 20px; width: 35%;" src="figs/intro/geometries.png"/>
                     <p style="color: grey;">&#8595; SCROLL TO BEGIN &#8595;</p>      
                     
                 </div>
@@ -217,8 +217,12 @@
                 </p>
 
                 <div>
-                    Change the slider below to see how the PES evolves with the number of times the loop is executed (active learning generation).
-                    <svg id='slider'></svg>                        
+                    <p>
+                        Change the slider below to see how the PES evolves with the number of times the loop is executed (active learning generation).
+                    </p>
+                    <p>
+                        <svg id='slider'></svg> 
+                    </p>          
                 </div>    
             </section>
             <section class="step" style="color: white;" id="active_blank">""</section>
@@ -248,38 +252,13 @@
                         The visualization of the NN classifier for cats/dogs was based on <a href="https://www.inovex.de/blog/uncertainty-quantification-deep-learning/">a post by S. Bachstein</a>.
                         </p>
             </section>
-            <hr width="100%">
-        <!-- <section class="step flex-container" style="width:100%;" id="future_">
-                <div style="width: 40%;">
-                    <h2> Beyond this 6.859 MVP </h2>
-                    <h3>Future Work</h3>
-                    <p>
-                        In the upcoming weeks, we plan to add visualizations to show how predictions are improved using this method and interactions to help the readers better understand these concepts. 
-                    </p>
-                    <p>
-                        We also plan to explore ways to visualize the uncertainty in performance of these improved machine learning approach. 
-                    </p>
-                    <h3>Questions & Feedback</h3>
-                    <p>
-                        We'd love to get your input on the work done so far. A few questions we have are: 
-                        <ul>
-                            <li>What interactions do you feel would be useful to better engage with this content?</li>
-                            <li>Is the scrollytelling effective or can it be improved?</li>
-                            <li>Is the text per section too much, too little or just right?</li>
-                        </ul>
-                    </p>
-                </div>
-                <div style="width: 60%;">
-                    <img src="figs/intro/future_work.png" style="padding-left: 40px; width: 90%; text-align: center;"/>
-                </div>
-            </section> -->
 
             </div>
 
 
             <svg id="svgBlank" class = "visuals"></svg>
-            <svg id='svgIntro1' viewBox = "-175 -10 350 350" class = "visuals"></svg>
-            <svg id='svgIntro2' viewBox = "-195 -50 550 550" class = "visuals"></svg>
+            <svg id='svgIntro1' viewBox = "-175 -10 400 400" class = "visuals"></svg>
+            <svg id='svgIntro2' viewBox = "-230 -50 650 650" class = "visuals"></svg>
             <svg id='svgIntro3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro3Cat' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro3Dog' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
@@ -288,24 +267,24 @@
             <svg id='svgIntro4_1' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro4_2' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
             <svg id='svgIntro4_3' viewBox = "-1600 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgUncertainty1' viewBox = "-1350 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgUncertainty2' viewBox = "-1350 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgUncertainty3' viewBox = "-1350 -500 3500 3500" class = "visuals"></svg>
-            <svg id='svgAttacks1' viewBox = "-1900 -400 5000 2400" class = "visuals"></svg>
-            <svg id='svgAttacks2' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svgAttacks3' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svgAttacks4' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svgLoop1' viewBox = "-1000 -200 2000 2000" class = "visuals"></svg>
+            <svg id='svgUncertainty1' viewBox = "-1500 -500 4000 4000" class = "visuals"></svg>
+            <svg id='svgUncertainty2' viewBox = "-1500 -500 4000 4000" class = "visuals"></svg>
+            <svg id='svgUncertainty3' viewBox = "-1500 -500 4000 4000" class = "visuals"></svg>
+            <svg id='svgAttacks1' viewBox = "-2000 -400 5500 2750" class = "visuals"></svg>
+            <svg id='svgAttacks2' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svgAttacks3' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svgAttacks4' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svgLoop1' viewBox = "-1200 -200 2500 2500" class = "visuals"></svg>
             
-            <svg id='svg1' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svg2' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svg3' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svg4' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svg5' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svg6' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
-            <svg id='svg7' viewBox = "-2500 -600 6500 2400" class = "visuals"></svg>
+            <svg id='svg1' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svg2' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svg3' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svg4' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svg5' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svg6' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
+            <svg id='svg7' viewBox = "-2750 -600 7250 2500" class = "visuals"></svg>
             
-            <svg id='svgActivePerf' viewBox = "-900 -200 2000 2000" class = "visuals"></svg>
+            <svg id='svgActivePerf' viewBox = "-1100 -200 2500 2500" class = "visuals"></svg>
 
             <!-- <svg id='svgEnd' class = "visuals"></svg> -->
 

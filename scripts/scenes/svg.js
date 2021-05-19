@@ -143,7 +143,7 @@ class SvgSlider extends Scene {
             .step(1)
             .tickValues([1, 2,3,4,5,6,7])
             .tickFormat(d3.format('.0f'))
-            .width(500)
+            .width(400)
             .displayValue(true)
             .fill('blue')
             .default(1)
