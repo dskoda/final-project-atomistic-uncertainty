@@ -12,7 +12,7 @@ Academic work is often communicated through peer-reviewed research papers, confe
 The design analysis can found on [this link](https://6859-sp21.github.io/final-project-atomistic-uncertainty)
 
 ## Video
-The video description can found on [this link](https://6859-sp21.github.io/final-project-atomistic-uncertainty)
+The video description can found on [this link](https://drive.google.com/file/d/1lE7nfRzzB17LngJpSBN7uFlpHWqnBToE/view?usp=sharing)
 
 ## Use Instructions 
 This visualization is designed to be self-explanatory and should require minimal effort for exploration.
