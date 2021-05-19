@@ -22,12 +22,12 @@ z-index: 90;
 
 .step {
 margin-bottom: 500px;
-font-size: 20px;
+font-size: 24px;
 }
 
 .s_small {
     margin-bottom:100px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .visuals {
@@ -42,11 +42,11 @@ position: fixed;
 }
 
 .slider text {
-    font-size: 14px;
+    font-size: 18px;
   }
 
 .axis text {
-    font-size: 14px;
+    font-size: 18px;
   }
 
 html {
@@ -81,7 +81,7 @@ main > nav {
 }
 .section-nav li.active > a {
 	color: #333;
-	font-weight: 500;
+	font-weight: 700;
 }
 
 
