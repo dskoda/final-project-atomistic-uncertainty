@@ -47,7 +47,7 @@ scenes = [
 
 function changeScenes(index) {
     d3.selectAll('.step')
-        .style('opacity', function (d, i) { return i === index ? 1 : 0.1; });
+        .style('opacity', function (d, i) { return i === index ? 1 : 0.8; });
 
     console.log(`Section ${index}`);
     scenes[index].render();
